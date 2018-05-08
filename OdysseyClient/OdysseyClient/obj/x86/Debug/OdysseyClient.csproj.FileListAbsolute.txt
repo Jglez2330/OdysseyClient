@@ -1,0 +1,6 @@
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/OdysseyClient.exe
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/OdysseyClient.pdb
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csprojResolveAssemblyReference.cache
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csproj.CoreCompileInputs.cache
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.exe
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.pdb

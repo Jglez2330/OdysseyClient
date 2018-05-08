@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{AA08A8DD-CD55-4D74-B026-36269906456C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/SocketClient.cs">
+    <Files>
+      <File FileName="OdysseyClient/Program.cs" Line="10" Column="54" />
+      <File FileName="OdysseyClient/ViewManager.cs" Line="10" Column="32" />
+      <File FileName="OdysseyClient/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="OdysseyClient/SocketClient.cs" Line="10" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.OdysseyClient PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
