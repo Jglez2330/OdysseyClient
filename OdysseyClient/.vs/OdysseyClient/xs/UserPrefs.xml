@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{AA08A8DD-CD55-4D74-B026-36269906456C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/SocketClient.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/UI/ViewManager.cs">
     <Files>
-      <File FileName="OdysseyClient/Program.cs" Line="10" Column="54" />
-      <File FileName="OdysseyClient/ViewManager.cs" Line="10" Column="32" />
-      <File FileName="OdysseyClient/MainWindow.cs" Line="1" Column="1" />
-      <File FileName="OdysseyClient/SocketClient.cs" Line="10" Column="43" />
+      <File FileName="OdysseyClient/Program.cs" Line="10" Column="6" />
+      <File FileName="OdysseyClient/UI/ViewManager.cs" Line="71" Column="30" />
+      <File FileName="OdysseyClient/SocketClient.cs" Line="21" Column="17" />
+      <File FileName="OdysseyClient/MainWindow.cs" Line="16" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

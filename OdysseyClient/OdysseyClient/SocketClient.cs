@@ -9,7 +9,7 @@ namespace OdysseyClient
     {
         private Socket socket;
 		private static SocketClient SocketClientInstance;
-        private string ip = "192.168.0.102";
+		private string ip = "192.168.0.102";
 
 		private SocketClient()
         {
@@ -21,6 +21,7 @@ namespace OdysseyClient
                 socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(ipEndpoint);
                 Console.WriteLine("Socket created to {0}", socket.RemoteEndPoint.ToString());
+				send();
 
             }catch(Exception e){
                 Console.WriteLine(e.ToString()); 
