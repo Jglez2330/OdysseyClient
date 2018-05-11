@@ -5,11 +5,11 @@ namespace OdysseyClient
 {
     public class ViewManager
     {
-		private MainWindow window;
+		public MainWindow window;
 		private Window ventana;
         public ViewManager()
         {
-			Application.Init();
+            /*Application.Init();
 			this.ventana = new Window("Odyssey");
 			this.ventana.SetSizeRequest(600, 600);
 			this.ventana.DeleteEvent += OnDeleteEvent;
@@ -23,7 +23,13 @@ namespace OdysseyClient
 			this.ventana.Add(fix);
 			this.ventana.ShowAll();
 
-			Application.Run();
+			Application.Run();*/
+            Application.Init();
+            this.window = MainWindow.GetMainWindow();
+            this.window.ShowAll();
+            Application.Run();
+            
+            
 
           /*  Application.Init();
 			this.window = new MainWindow();
@@ -53,11 +59,11 @@ namespace OdysseyClient
             
         }
 		public void Send(object obj,EventArgs args){
-			SocketClient.GetSocketClient().send();
+			//SocketClient.GetSocketClient().send();
 		}
 		public void ShowFileChooser(object obj, EventArgs args)
         {
-            FileChooserDialog fileChooser = new FileChooserDialog("Hola", this.window, FileChooserAction.Open, "Cancel", ResponseType.Cancel,
+			FileChooserDialog fileChooser = new FileChooserDialog("Hola", this.ventana, FileChooserAction.Open, "Cancel", ResponseType.Cancel,
                                                                   "Open", ResponseType.Accept);
 
 			FileFilter file = new FileFilter();
@@ -69,7 +75,10 @@ namespace OdysseyClient
             fileChooser.Show();
 			if (fileChooser.Run() == (int)ResponseType.Accept)
             {
-                System.IO.FileStream files = System.IO.File.OpenRead(fileChooser.Filename);
+				byte[] cancionBytes = System.IO.File.ReadAllBytes(fileChooser.Filename);
+				Console.Write(cancionBytes[cancionBytes.Length-1]);
+
+
 
                 
 

@@ -1,6 +1,7 @@
 ﻿using System.Net;
-using System;
+using System.Xml.Linq;
 using System.Text;
+using System;
 using System.Net.Sockets;
 
 namespace OdysseyClient
@@ -9,7 +10,7 @@ namespace OdysseyClient
     {
         private Socket socket;
 		private static SocketClient SocketClientInstance;
-		private string ip = "192.168.0.102";
+		private string ip = "192.168.0.103";
 
 		private SocketClient()
         {
@@ -21,7 +22,7 @@ namespace OdysseyClient
                 socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(ipEndpoint);
                 Console.WriteLine("Socket created to {0}", socket.RemoteEndPoint.ToString());
-				send();
+
 
             }catch(Exception e){
                 Console.WriteLine(e.ToString()); 
@@ -34,10 +35,11 @@ namespace OdysseyClient
 			}
 			return SocketClientInstance;
 		}
-		public void send(){
-			byte[] bytes = Encoding.ASCII.GetBytes("Hola\n");
+		public void send(XDocument xmlCancion){
+			string s = xmlCancion.ToString();
+			byte[] message = Encoding.UTF8.GetBytes(s + "\n");
 
-			this.socket.Send(bytes);
+			this.socket.Send(message);
 		}
     }
 }
