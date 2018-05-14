@@ -64,6 +64,8 @@
     <Compile Include="UI\ViewManager.cs" />
     <Compile Include="UI\MainWindow.cs" />
     <Compile Include="XMLGenerator.cs" />
+    <Compile Include="gtk-gui\OdysseyClient.AddSongUI.cs" />
+    <Compile Include="UI\AddSongUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

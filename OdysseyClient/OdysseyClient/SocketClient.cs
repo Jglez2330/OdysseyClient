@@ -10,7 +10,7 @@ namespace OdysseyClient
     {
         private Socket socket;
 		private static SocketClient SocketClientInstance;
-		private string ip = "192.168.0.103";
+		private string ip = "192.168.1.131";
 
 		private SocketClient()
         {
@@ -40,6 +40,9 @@ namespace OdysseyClient
 			byte[] message = Encoding.UTF8.GetBytes(s + "\n");
 
 			this.socket.Send(message);
+		}
+		public void Close(){
+			this.socket.Close();
 		}
     }
 }

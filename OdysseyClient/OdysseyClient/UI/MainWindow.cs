@@ -21,6 +21,7 @@ public partial class MainWindow : Gtk.Window
 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
     {
+		SocketClient.GetSocketClient().Close();
         Application.Quit();
         a.RetVal = true;
     }
@@ -32,8 +33,8 @@ public partial class MainWindow : Gtk.Window
 
         FileFilter file = new FileFilter();
         file.AddPattern("*.mp3");
-        file.AddPattern("*.mp4");
-        file.AddPattern("*.aac");
+        //file.AddPattern("*.mp4");
+        //file.AddPattern("*.aac");
 
         fileChooser.AddFilter(file);
         fileChooser.Show();
@@ -41,13 +42,14 @@ public partial class MainWindow : Gtk.Window
         {
             byte[] cancionBytes = System.IO.File.ReadAllBytes(fileChooser.Filename);
 
-			SocketClient.GetSocketClient().send(XMLGenerator.Generate("", "", "", -1, "", 0, cancionBytes));
+			SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","Night Moves","Bob Seger","Unknown", 0, "Hola", 0, cancionBytes));
 
 
 
 
 
         }
+		SocketClient.GetSocketClient().Close();
 
         fileChooser.Destroy();
 
