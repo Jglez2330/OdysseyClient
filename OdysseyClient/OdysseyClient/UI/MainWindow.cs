@@ -28,6 +28,8 @@ public partial class MainWindow : Gtk.Window
 
 	protected void OnAgregarCancion(object sender, EventArgs e)
 	{
+		AddSongUI addSong = new AddSongUI();
+		addSong.ShowAll();
 		FileChooserDialog fileChooser = new FileChooserDialog("Hola", mainWindow, FileChooserAction.Open, "Cancel", ResponseType.Cancel,
                                                                   "Open", ResponseType.Accept);
 
@@ -37,19 +39,19 @@ public partial class MainWindow : Gtk.Window
         //file.AddPattern("*.aac");
 
         fileChooser.AddFilter(file);
-        fileChooser.Show();
+        //fileChooser.Show();
         if (fileChooser.Run() == (int)ResponseType.Accept)
         {
             byte[] cancionBytes = System.IO.File.ReadAllBytes(fileChooser.Filename);
 
-			SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","Night Moves","Bob Seger","Unknown", 0, "Hola", 0, cancionBytes));
+			//SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","Night Moves","Bob Seger","Unknown", 0, "Hola", 0, cancionBytes));
 
 
 
 
 
         }
-		SocketClient.GetSocketClient().Close();
+		//SocketClient.GetSocketClient().Close();
 
         fileChooser.Destroy();
 

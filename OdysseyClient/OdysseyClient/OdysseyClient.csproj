@@ -66,6 +66,8 @@
     <Compile Include="XMLGenerator.cs" />
     <Compile Include="gtk-gui\OdysseyClient.AddSongUI.cs" />
     <Compile Include="UI\AddSongUI.cs" />
+    <Compile Include="gtk-gui\OdysseyClient.Login.cs" />
+    <Compile Include="UI\Login.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

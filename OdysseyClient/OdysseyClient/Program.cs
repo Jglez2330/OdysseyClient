@@ -9,7 +9,9 @@ namespace OdysseyClient
         {
 			//SocketClient client = SocketClient.GetSocketClient();
 			//XMLGenerator.Generate("", "", "", -1, "", 0);
-            ViewManager viewManager = new ViewManager();
+			//ViewManager viewManager = new ViewManager();
+			Login login = new Login();
+			//login.ShowAll();
         }
     }
 }
