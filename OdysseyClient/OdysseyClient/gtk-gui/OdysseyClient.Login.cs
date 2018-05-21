@@ -12,6 +12,8 @@ namespace OdysseyClient
 
 		private global::Gtk.Entry entry5;
 
+		private global::Gtk.Button button1;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -50,11 +52,22 @@ namespace OdysseyClient
 			this.entry5.Name = "entry5";
 			this.entry5.Text = global::Mono.Unix.Catalog.GetString("Contraseña");
 			this.entry5.IsEditable = true;
+			this.entry5.Visibility = false;
 			this.entry5.InvisibleChar = '●';
 			this.fixed4.Add(this.entry5);
 			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.entry5]));
 			w3.X = 90;
 			w3.Y = 110;
+			// Container child fixed4.Gtk.Fixed+FixedChild
+			this.button1 = new global::Gtk.Button();
+			this.button1.CanFocus = true;
+			this.button1.Name = "button1";
+			this.button1.UseUnderline = true;
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("Registrarse");
+			this.fixed4.Add(this.button1);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.button1]));
+			w4.X = 130;
+			w4.Y = 190;
 			this.Add(this.fixed4);
 			if ((this.Child != null))
 			{
@@ -63,6 +76,8 @@ namespace OdysseyClient
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 358;
 			this.Show();
+			this.button2.Clicked += new global::System.EventHandler(this.Access);
+			this.button1.Clicked += new global::System.EventHandler(this.Register);
 		}
 	}
 }

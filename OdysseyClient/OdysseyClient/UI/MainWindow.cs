@@ -44,7 +44,7 @@ public partial class MainWindow : Gtk.Window
         {
             byte[] cancionBytes = System.IO.File.ReadAllBytes(fileChooser.Filename);
 
-			//SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","Night Moves","Bob Seger","Unknown", 0, "Hola", 0, cancionBytes));
+			SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","Night Moves","Bob Seger","Unknown", 0, "Hola", 0, cancionBytes));
 
 
 

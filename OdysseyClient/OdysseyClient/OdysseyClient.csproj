@@ -49,6 +49,7 @@
     <Reference Include="Mono.Posix" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.RegularExpressions" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -68,6 +69,9 @@
     <Compile Include="UI\AddSongUI.cs" />
     <Compile Include="gtk-gui\OdysseyClient.Login.cs" />
     <Compile Include="UI\Login.cs" />
+    <Compile Include="XMLGetter.cs" />
+    <Compile Include="AlertWindow.cs" />
+    <Compile Include="gtk-gui\OdysseyClient.AlertWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />
