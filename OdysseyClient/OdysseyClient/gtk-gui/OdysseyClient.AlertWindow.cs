@@ -24,7 +24,6 @@ namespace OdysseyClient
 			w1.BorderWidth = ((uint)(2));
 			// Container child dialog1_VBox.Gtk.Box+BoxChild
 			this.fixed1 = new global::Gtk.Fixed();
-			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label1 = new global::Gtk.Label();
@@ -33,7 +32,7 @@ namespace OdysseyClient
 			this.label1.Justify = ((global::Gtk.Justification)(2));
 			this.fixed1.Add(this.label1);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
-			w2.X = 75;
+			w2.X = 50;
 			w2.Y = 100;
 			w1.Add(this.fixed1);
 			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(w1[this.fixed1]));
@@ -73,7 +72,7 @@ namespace OdysseyClient
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 400;
+			this.DefaultWidth = 442;
 			this.DefaultHeight = 300;
 			this.Show();
 			this.buttonCancel.Clicked += new global::System.EventHandler(this.Delete);

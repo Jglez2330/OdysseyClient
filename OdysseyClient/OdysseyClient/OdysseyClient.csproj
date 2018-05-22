@@ -72,6 +72,8 @@
     <Compile Include="XMLGetter.cs" />
     <Compile Include="AlertWindow.cs" />
     <Compile Include="gtk-gui\OdysseyClient.AlertWindow.cs" />
+    <Compile Include="RegisterWindow.cs" />
+    <Compile Include="gtk-gui\OdysseyClient.RegisterWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

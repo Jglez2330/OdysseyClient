@@ -41,5 +41,11 @@ namespace OdysseyClient
 			                                                  new XElement("Password", passwordString)));
 			return xml;
         }
+		public static XDocument RequestUsers()
+		{
+			XDocument xml = new XDocument(new XElement("Data",
+														new XElement("opCode", 22)));
+			return xml;
+		}
    	}
 }
