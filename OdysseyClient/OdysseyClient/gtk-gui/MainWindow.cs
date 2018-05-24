@@ -7,6 +7,8 @@ public partial class MainWindow
 
 	private global::Gtk.Button button2;
 
+	private global::Gtk.Button button5;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -29,6 +31,16 @@ public partial class MainWindow
 		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button2]));
 		w1.X = 70;
 		w1.Y = 216;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button5 = new global::Gtk.Button();
+		this.button5.CanFocus = true;
+		this.button5.Name = "button5";
+		this.button5.UseUnderline = true;
+		this.button5.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+		this.fixed1.Add(this.button5);
+		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button5]));
+		w2.X = 93;
+		w2.Y = 121;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
@@ -39,5 +51,6 @@ public partial class MainWindow
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.button2.Clicked += new global::System.EventHandler(this.OnAgregarCancion);
+		this.button5.Clicked += new global::System.EventHandler(this.GetSongs);
 	}
 }

@@ -7,13 +7,13 @@ namespace OdysseyClient
     {
         public static void Main(string[] args)
         {
-			//SocketClient client = SocketClient.GetSocketClient();
-			//XMLGenerator.Generate("", "", "", -1, "", 0);
-			//ViewManager viewManager = new ViewManager();
+			byte[] array = System.Text.Encoding.UTF8.GetBytes("\u0001");
+			Console.Write(array[0]);
 			Application.Init();
-			Login login = new Login();
-			Login.originalLogin = login;
-			login.Show();
+			ViewManager viewManager = new ViewManager();
+			//Login login = new Login();
+			//Login.originalLogin = login;
+			//login.Show();
 			Application.Run();
 			//login.ShowAll();
         }

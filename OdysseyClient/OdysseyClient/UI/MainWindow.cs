@@ -1,7 +1,14 @@
 ﻿using System;
 using Gtk;
 using OdysseyClient;
-
+using System.Xml.Linq;
+using System.Media;
+using System.IO;
+using Microsoft.VisualBasic.Devices;
+using NAudio.Wave;
+using CSCore.Codecs.MP3;
+using Vlc.DotNet.Core;
+using System.Windows;
 public partial class MainWindow : Gtk.Window
 {
 	private static MainWindow mainWindow;
@@ -11,6 +18,8 @@ public partial class MainWindow : Gtk.Window
 			mainWindow = new MainWindow();
 		}
 		return mainWindow;
+        
+        
 	}
 
 
@@ -36,7 +45,7 @@ public partial class MainWindow : Gtk.Window
         FileFilter file = new FileFilter();
         file.AddPattern("*.mp3");
         //file.AddPattern("*.mp4");
-        //file.AddPattern("*.aac");
+        file.AddPattern("*.wav");
 
         fileChooser.AddFilter(file);
         //fileChooser.Show();
@@ -44,7 +53,11 @@ public partial class MainWindow : Gtk.Window
         {
             byte[] cancionBytes = System.IO.File.ReadAllBytes(fileChooser.Filename);
 
-			SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","Night Moves","Bob Seger","Unknown", 0, "Hola", 0, cancionBytes));
+			//	SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","NightMoves","BobSeger","Unknown", 0, "Hola", 0, cancionBytes));
+			//MediaPlayer mediaPlayer = new MediaPlayer();
+
+			//Audio audio = new Audio();
+			//audio.Play(cancionBytes, Microsoft.VisualBasic.AudioPlayMode.WaitToComplete);
 
 
 
@@ -57,4 +70,13 @@ public partial class MainWindow : Gtk.Window
 
     }
 
+	protected void GetSongs(object sender, EventArgs e)
+	{
+		SocketClient.GetSocketClient().send(XMLGenerator.Generate("None", "None", 2));
+		XDocument xml = SocketClient.GetSocketClient().Listen();
+		Console.Write(xml);
+		//byte[] song = System.Text.Encoding.UTF8.GetBytes(xml.Root.Element("SongData").Element("SongString").Value);
+
+
+	}
 }

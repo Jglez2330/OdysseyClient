@@ -1,6 +1,14 @@
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/OdysseyClient.exe
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/OdysseyClient.pdb
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csprojResolveAssemblyReference.cache
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/CSCore.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/NAudio.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/NAudio.xml
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/CSCore.xml
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csproj.CoreCompileInputs.cache
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.exe
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.pdb
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csprojResolveAssemblyReference.cache
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibImages.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibMplayerCommon.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/MPlayerGtkWidget.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibMplayerCommon.xml

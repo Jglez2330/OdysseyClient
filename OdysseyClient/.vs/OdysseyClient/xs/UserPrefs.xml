@@ -1,12 +1,16 @@
 ﻿<Properties StartupConfiguration="{AA08A8DD-CD55-4D74-B026-36269906456C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/RegisterWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/UI/MainWindow.cs">
     <Files>
       <File FileName="OdysseyClient/gtk-gui/OdysseyClient.Login.cs" Line="1" Column="1" />
       <File FileName="OdysseyClient/gtk-gui/OdysseyClient.RegisterWindow.cs" Line="1" Column="1" />
       <File FileName="OdysseyClient/AlertWindow.cs" Line="1" Column="1" />
-      <File FileName="OdysseyClient/RegisterWindow.cs" Line="20" Column="14" />
+      <File FileName="OdysseyClient/RegisterWindow.cs" Line="28" Column="6" />
       <File FileName="OdysseyClient/XMLGenerator.cs" Line="47" Column="44" />
       <File FileName="OdysseyClient/UI/Login.cs" Line="87" Column="57" />
+      <File FileName="OdysseyClient/MediaPlayer.cs" Line="7" Column="3" />
+      <File FileName="OdysseyClient/UI/MainWindow.cs" Line="58" Column="1" />
+      <File FileName="OdysseyClient/Program.cs" Line="13" Column="48" />
+      <File FileName="OdysseyClient/SocketClient.cs" Line="107" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

@@ -50,6 +50,32 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="NAudio">
+      <HintPath>..\packages\NAudio.1.8.4\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="CSCore">
+      <HintPath>..\packages\CSCore.1.2.1.2\lib\net35-client\CSCore.dll</HintPath>
+    </Reference>
+    <Reference Include="LibImages">
+      <HintPath>..\packages\MPlayerControl.1.2.0\lib\net45\LibImages.dll</HintPath>
+    </Reference>
+    <Reference Include="LibMplayerCommon">
+      <HintPath>..\packages\MPlayerControl.1.2.0\lib\net45\LibMplayerCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="MPlayerGtkWidget">
+      <HintPath>..\packages\MPlayerControl-Gtk.1.2.0\lib\net45\MPlayerGtkWidget.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Vlc.DotNet.Core.Interops">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.2.1\lib\net45\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.2.1\lib\net45\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -74,10 +100,16 @@
     <Compile Include="gtk-gui\OdysseyClient.AlertWindow.cs" />
     <Compile Include="RegisterWindow.cs" />
     <Compile Include="gtk-gui\OdysseyClient.RegisterWindow.cs" />
+    <Compile Include="MediaPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />
     <Folder Include="XML\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="WpfMPlayer.exe" />
+    <None Include="MediaPlayer.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

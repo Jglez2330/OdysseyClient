@@ -25,7 +25,7 @@ namespace OdysseyClient
 
 		protected void AddFriend(object sender, System.EventArgs e)
 		{
-			comboboxentry2.
+			//comboboxentry2.
 
 
 		}
