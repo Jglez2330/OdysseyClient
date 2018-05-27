@@ -5,9 +5,33 @@ public partial class MainWindow
 {
 	private global::Gtk.Fixed fixed1;
 
+	private global::Gtk.ComboBox combobox1;
+
 	private global::Gtk.Button button2;
 
 	private global::Gtk.Button button5;
+
+	private global::Gtk.Entry entry2;
+
+	private global::Gtk.Button button21;
+
+	private global::Gtk.Button button22;
+
+	private global::Gtk.Button button23;
+
+	private global::Gtk.Button button24;
+
+	private global::Gtk.Button button37;
+
+	private global::Gtk.Button button38;
+
+	private global::Gtk.Image image1;
+
+	private global::Gtk.Label Pagina;
+
+	private global::Gtk.Button button1;
+
+	private global::Gtk.Button button3;
 
 	protected virtual void Build()
 	{
@@ -21,6 +45,18 @@ public partial class MainWindow
 		this.fixed1.Name = "fixed1";
 		this.fixed1.HasWindow = false;
 		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.combobox1 = global::Gtk.ComboBox.NewText();
+		this.combobox1.AppendText(global::Mono.Unix.Catalog.GetString("Canción"));
+		this.combobox1.AppendText(global::Mono.Unix.Catalog.GetString("Letra"));
+		this.combobox1.AppendText(global::Mono.Unix.Catalog.GetString("Artista"));
+		this.combobox1.AppendText(global::Mono.Unix.Catalog.GetString("Albúm"));
+		this.combobox1.Name = "combobox1";
+		this.combobox1.Active = 0;
+		this.fixed1.Add(this.combobox1);
+		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.combobox1]));
+		w1.X = 800;
+		w1.Y = 25;
+		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.button2 = new global::Gtk.Button();
 		this.button2.CanFocus = true;
 		this.button2.Events = ((global::Gdk.EventMask)(256));
@@ -28,9 +64,9 @@ public partial class MainWindow
 		this.button2.UseUnderline = true;
 		this.button2.Label = global::Mono.Unix.Catalog.GetString("Agregar Cancion\n");
 		this.fixed1.Add(this.button2);
-		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button2]));
-		w1.X = 70;
-		w1.Y = 216;
+		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button2]));
+		w2.X = 809;
+		w2.Y = 494;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.button5 = new global::Gtk.Button();
 		this.button5.CanFocus = true;
@@ -38,18 +74,135 @@ public partial class MainWindow
 		this.button5.UseUnderline = true;
 		this.button5.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
 		this.fixed1.Add(this.button5);
-		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button5]));
-		w2.X = 93;
-		w2.Y = 121;
+		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button5]));
+		w3.X = 45;
+		w3.Y = 515;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.entry2 = new global::Gtk.Entry();
+		this.entry2.CanFocus = true;
+		this.entry2.Name = "entry2";
+		this.entry2.IsEditable = true;
+		this.entry2.InvisibleChar = '●';
+		this.fixed1.Add(this.entry2);
+		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry2]));
+		w4.X = 791;
+		w4.Y = 61;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button21 = new global::Gtk.Button();
+		this.button21.WidthRequest = 600;
+		this.button21.HeightRequest = 50;
+		this.button21.CanFocus = true;
+		this.button21.Name = "button21";
+		this.button21.UseUnderline = true;
+		this.button21.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+		this.fixed1.Add(this.button21);
+		global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button21]));
+		w5.X = 90;
+		w5.Y = 130;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button22 = new global::Gtk.Button();
+		this.button22.WidthRequest = 600;
+		this.button22.HeightRequest = 50;
+		this.button22.CanFocus = true;
+		this.button22.Name = "button22";
+		this.button22.UseUnderline = true;
+		this.button22.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+		this.fixed1.Add(this.button22);
+		global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button22]));
+		w6.X = 90;
+		w6.Y = 200;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button23 = new global::Gtk.Button();
+		this.button23.WidthRequest = 600;
+		this.button23.HeightRequest = 50;
+		this.button23.CanFocus = true;
+		this.button23.Name = "button23";
+		this.button23.UseUnderline = true;
+		this.button23.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+		this.fixed1.Add(this.button23);
+		global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button23]));
+		w7.X = 90;
+		w7.Y = 270;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button24 = new global::Gtk.Button();
+		this.button24.WidthRequest = 600;
+		this.button24.HeightRequest = 50;
+		this.button24.CanFocus = true;
+		this.button24.Name = "button24";
+		this.button24.UseUnderline = true;
+		this.button24.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+		this.fixed1.Add(this.button24);
+		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button24]));
+		w8.X = 90;
+		w8.Y = 340;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button37 = new global::Gtk.Button();
+		this.button37.CanFocus = true;
+		this.button37.Name = "button37";
+		this.button37.UseUnderline = true;
+		this.button37.Label = global::Mono.Unix.Catalog.GetString("Anterior");
+		this.fixed1.Add(this.button37);
+		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button37]));
+		w9.X = 250;
+		w9.Y = 500;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button38 = new global::Gtk.Button();
+		this.button38.CanFocus = true;
+		this.button38.Name = "button38";
+		this.button38.UseUnderline = true;
+		this.button38.Label = global::Mono.Unix.Catalog.GetString("Siguiente");
+		this.fixed1.Add(this.button38);
+		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button38]));
+		w10.X = 450;
+		w10.Y = 500;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.image1 = new global::Gtk.Image();
+		this.image1.Name = "image1";
+		this.image1.Pixbuf = global::Stetic.IconLoader.LoadIcon(this, "gtk-cut", global::Gtk.IconSize.Menu);
+		this.fixed1.Add(this.image1);
+		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.image1]));
+		w11.X = 693;
+		w11.Y = 146;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.Pagina = new global::Gtk.Label();
+		this.Pagina.Name = "Pagina";
+		this.Pagina.LabelProp = global::Mono.Unix.Catalog.GetString("Numero Pagina");
+		this.fixed1.Add(this.Pagina);
+		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.Pagina]));
+		w12.X = 335;
+		w12.Y = 505;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button1 = new global::Gtk.Button();
+		this.button1.CanFocus = true;
+		this.button1.Name = "button1";
+		this.button1.UseStock = true;
+		this.button1.UseUnderline = true;
+		this.button1.Label = "gtk-media-play";
+		this.fixed1.Add(this.button1);
+		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button1]));
+		w13.X = 317;
+		w13.Y = 433;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.button3 = new global::Gtk.Button();
+		this.button3.CanFocus = true;
+		this.button3.Name = "button3";
+		this.button3.UseStock = true;
+		this.button3.UseUnderline = true;
+		this.button3.Label = "gtk-media-pause";
+		this.fixed1.Add(this.button3);
+		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button3]));
+		w14.X = 414;
+		w14.Y = 437;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
 			this.Child.ShowAll();
 		}
-		this.DefaultWidth = 400;
-		this.DefaultHeight = 300;
+		this.DefaultWidth = 988;
+		this.DefaultHeight = 575;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
+		this.combobox1.Changed += new global::System.EventHandler(this.SendSort);
 		this.button2.Clicked += new global::System.EventHandler(this.OnAgregarCancion);
 		this.button5.Clicked += new global::System.EventHandler(this.GetSongs);
 	}

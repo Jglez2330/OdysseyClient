@@ -31,6 +31,7 @@ namespace OdysseyClient
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child OdysseyClient.RegisterWindow.Gtk.Container+ContainerChild
 			this.fixed1 = new global::Gtk.Fixed();
+			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entry1 = new global::Gtk.Entry();
@@ -108,7 +109,7 @@ namespace OdysseyClient
 			this.button6.CanFocus = true;
 			this.button6.Name = "button6";
 			this.button6.UseUnderline = true;
-			this.button6.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.button6.Label = global::Mono.Unix.Catalog.GetString("Agregar Amigo");
 			this.fixed1.Add(this.button6);
 			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button6]));
 			w8.X = 663;
@@ -121,6 +122,7 @@ namespace OdysseyClient
 			this.DefaultWidth = 808;
 			this.DefaultHeight = 542;
 			this.Show();
+			this.button6.Clicked += new global::System.EventHandler(this.AddFriend);
 		}
 	}
 }

@@ -10,5 +10,10 @@
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csprojResolveAssemblyReference.cache
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibImages.dll
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibMplayerCommon.dll
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/MPlayerGtkWidget.dll
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibMplayerCommon.xml
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/Vlc.DotNet.Core.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/Vlc.DotNet.Core.Interops.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.dll
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.pdb
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.xml
+/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.dll.config

@@ -75,8 +75,17 @@ public partial class MainWindow : Gtk.Window
 		SocketClient.GetSocketClient().send(XMLGenerator.Generate("None", "None", 2));
 		XDocument xml = SocketClient.GetSocketClient().Listen();
 		Console.Write(xml);
+        
 		//byte[] song = System.Text.Encoding.UTF8.GetBytes(xml.Root.Element("SongData").Element("SongString").Value);
 
 
+	}
+
+	protected void SendSort(object sender, EventArgs e)
+	{
+		SocketClient.GetSocketClient().send(XMLGenerator.RequestSort(combobox1.ActiveText));
+		XDocument xmlRespond = SocketClient.GetSocketClient().Listen();
+		//image1.Pixbuf;
+        
 	}
 }

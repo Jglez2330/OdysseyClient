@@ -47,5 +47,12 @@ namespace OdysseyClient
 														new XElement("opCode", 22)));
 			return xml;
 		}
+		public static XDocument RequestSort(string sort)
+		{
+			XDocument xml = new XDocument(new XElement("Data",
+													   new XElement("opCode", 23),
+													   new XElement("Sort", sort)));
+			return xml;
+		}
    	}
 }
