@@ -29,7 +29,6 @@ C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\CSCore.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\LibImages.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\LibMplayerCommon.dll
-C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\MPlayerGtkWidget.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\NAudio.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\Vlc.DotNet.Core.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\Vlc.DotNet.Core.Interops.dll
@@ -41,3 +40,9 @@ C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.WMPLauncher.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.WMPLib.dll
 C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.csproj.ResolveComReference.cache
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\Mono.Cairo.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\libstetic.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\libstetic.xml
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\libstetic.dll.config
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.EnvDTE.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.VSLangProj.dll
