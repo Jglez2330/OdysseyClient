@@ -55,7 +55,7 @@ namespace OdysseyClient
         }
         public void Close()
         {
-            this.socket.Close();
+            //this.socket.Close();
         }
 
         public XDocument Listen()
@@ -82,13 +82,13 @@ namespace OdysseyClient
 			////socket.Receive(buffer,buffer.Length,SocketFlags.None);
 			byte[] trash = new byte[socket.ReceiveBufferSize];
             var buffer = new List<byte>();
-			while (true)
+            var currByte = new Byte[1];
+            while (true)
 			{
-				var currByte = new Byte[1];
+				
 				var byteCounter = socket.Receive(currByte, currByte.Length, SocketFlags.None);
 
-				if (byteCounter.Equals(1))
-				{
+				
 					if (currByte[0] == 1)
 					{
 						break;
@@ -102,13 +102,14 @@ namespace OdysseyClient
 						buffer.Add(currByte[0]);
 
 					}
-				}
+				
 			}
 			socket.Receive(trash);
             ////Console.Write(sb);
 
-			string sb = Encoding.UTF8.GetString(buffer.ToArray());
+            string sb = System.Text.Encoding.UTF8.GetString(buffer.ToArray());
             //string sb2 = Encoding.UTF8.GetString(buffer2);
+            //Console.Write(sb);
 
 
             sb = sb.Replace("\u0000", System.String.Empty);

@@ -10,10 +10,12 @@ namespace OdysseyClient
 			byte[] array = System.Text.Encoding.UTF8.GetBytes("\u0001");
 			Console.Write(array[0]);
 			Application.Init();
-			ViewManager viewManager = new ViewManager();
-			//Login login = new Login();
-			//Login.originalLogin = login;
-			//login.Show();
+			//ViewManager viewManager = new ViewManager();
+			Login login = new Login();
+            
+
+            Login.originalLogin = login;
+			login.Show();
 			Application.Run();
 			//login.ShowAll();
         }

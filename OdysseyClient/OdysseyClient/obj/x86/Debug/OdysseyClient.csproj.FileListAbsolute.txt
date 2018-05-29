@@ -7,13 +7,37 @@
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csproj.CoreCompileInputs.cache
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.exe
 /Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.pdb
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/obj/x86/Debug/OdysseyClient.csprojResolveAssemblyReference.cache
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibImages.dll
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibMplayerCommon.dll
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/LibMplayerCommon.xml
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/Vlc.DotNet.Core.dll
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/Vlc.DotNet.Core.Interops.dll
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.dll
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.pdb
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.xml
-/Users/jglez2330/Documents/NET/C#/OdysseyClient/OdysseyClient/OdysseyClient/bin/Debug/libstetic.dll.config
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.csprojAssemblyReference.cache
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.csproj.CoreCompileInputs.cache
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.exe
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\OdysseyClient.exe
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\OdysseyClient.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\atk-sharp.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\gdk-sharp.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\glade-sharp.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\glib-sharp.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\gtk-sharp.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\Mono.Posix.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\pango-sharp.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\gdk-sharp.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\glib-sharp.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\glade-sharp.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\pango-sharp.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\atk-sharp.pdb
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.csproj.CopyComplete
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\CSCore.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\LibImages.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\LibMplayerCommon.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\MPlayerGtkWidget.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\NAudio.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\Vlc.DotNet.Core.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\Vlc.DotNet.Core.Interops.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\NAudio.xml
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\CSCore.xml
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\bin\Debug\LibMplayerCommon.xml
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.MediaPlayer.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.WMPDXMLib.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.WMPLauncher.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient\OdysseyClient\obj\x86\Debug\OdysseyClient.csproj.ResolveComReference.cache

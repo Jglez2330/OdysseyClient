@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p="OdysseyClient/OdysseyClient.csproj" t="IncludeRecursive" />
+    <e p="C:\Users\Joseph Gonzalez\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_OdysseyClient.-168716547.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Joseph Gonzalez\Documents\C#\OdysseyClient\OdysseyClient" t="IncludeFlat">
+      <e p="OdysseyClient" t="IncludeRecursive">
+        <e p="AlertWindow.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="gtk-gui" t="Include">
+          <e p="generated.cs" t="Include" />
+          <e p="gui.stetic" t="Include" />
+          <e p="MainWindow.cs" t="Include" />
+          <e p="OdysseyClient.AddSongUI.cs" t="Include" />
+          <e p="OdysseyClient.AlertWindow.cs" t="Include" />
+          <e p="OdysseyClient.Login.cs" t="Include" />
+          <e p="OdysseyClient.RegisterWindow.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OdysseyClient.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="RegisterWindow.cs" t="Include" />
+        <e p="SocketClient.cs" t="Include" />
+        <e p="UI" t="Include">
+          <e p="AddSongUI.cs" t="Include" />
+          <e p="Login.cs" t="Include" />
+          <e p="MainWindow.cs" t="Include" />
+          <e p="ViewManager.cs" t="Include" />
+        </e>
+        <e p="XML" t="Include" />
+        <e p="XMLGenerator.cs" t="Include" />
+        <e p="XMLGetter.cs" t="Include" />
+      </e>
       <e p="OdysseyClient.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_OdysseyClient.1181565116.00" t="ExcludeRecursive" />
   </component>
 </project>
