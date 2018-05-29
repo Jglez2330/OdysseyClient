@@ -205,5 +205,9 @@ public partial class MainWindow
 		this.combobox1.Changed += new global::System.EventHandler(this.SendSort);
 		this.button2.Clicked += new global::System.EventHandler(this.OnAgregarCancion);
 		this.button5.Clicked += new global::System.EventHandler(this.GetSongs);
+		this.button1.Clicked += new global::System.EventHandler(this.Play);
+		this.button2.Clicked += new global::System.EventHandler(this.Stop);
+        
+
 	}
 }
