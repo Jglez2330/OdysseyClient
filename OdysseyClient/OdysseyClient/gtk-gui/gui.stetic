@@ -26,7 +26,6 @@ Letra
 Artista
 Albúm</property>
             <property name="Active">0</property>
-            <signal name="Changed" handler="SendSort" />
           </widget>
           <packing>
             <property name="X">800</property>
@@ -69,6 +68,7 @@ Albúm</property>
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">●</property>
+            <signal name="Activated" handler="SendSort" />
           </widget>
           <packing>
             <property name="X">791</property>
@@ -84,6 +84,7 @@ Albúm</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">GtkButton</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="PlaySelectedSong" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -99,6 +100,7 @@ Albúm</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">GtkButton</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="PlaySeletedSong" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -114,6 +116,7 @@ Albúm</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">GtkButton</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="PlaySeletedSong" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -129,6 +132,7 @@ Albúm</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">GtkButton</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="PlaySeletedSong" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -142,6 +146,7 @@ Albúm</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Anterior</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="PreviousPage" />
           </widget>
           <packing>
             <property name="X">250</property>
@@ -155,6 +160,7 @@ Albúm</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">Siguiente</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="NextPage" />
           </widget>
           <packing>
             <property name="X">450</property>
@@ -188,11 +194,12 @@ Albúm</property>
             <property name="UseStock">True</property>
             <property name="Type">StockItem</property>
             <property name="StockId">gtk-media-play</property>
+            <signal name="Clicked" handler="Play" />
             <property name="label">gtk-media-play</property>
           </widget>
           <packing>
             <property name="X">317</property>
-            <property name="Y">433</property>
+            <property name="Y">430</property>
           </packing>
         </child>
         <child>
@@ -202,11 +209,12 @@ Albúm</property>
             <property name="UseStock">True</property>
             <property name="Type">StockItem</property>
             <property name="StockId">gtk-media-pause</property>
+            <signal name="Clicked" handler="Stop" />
             <property name="label">gtk-media-pause</property>
           </widget>
           <packing>
             <property name="X">414</property>
-            <property name="Y">437</property>
+            <property name="Y">430</property>
           </packing>
         </child>
       </widget>

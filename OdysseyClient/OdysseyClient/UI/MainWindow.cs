@@ -160,4 +160,28 @@ public partial class
 		//image1.Pixbuf;
         
 	}
+
+	protected void Play(object sender, EventArgs e)
+	{
+	}
+
+	protected void Stop(object sender, EventArgs e)
+	{
+	}
+
+	protected void PlaySelectedSong(object sender, EventArgs e)
+	{
+	}
+
+	protected void PlaySeletedSong(object sender, EventArgs e)
+	{
+	}
+
+	protected void PreviousPage(object sender, EventArgs e)
+	{
+	}
+
+	protected void NextPage(object sender, EventArgs e)
+	{
+	}
 }
