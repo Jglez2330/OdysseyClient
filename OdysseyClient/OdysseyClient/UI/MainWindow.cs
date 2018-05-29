@@ -14,7 +14,8 @@ using NAudio;
 using System.Collections.Generic;
 public partial class
     MainWindow : Gtk.Window
-{
+   {
+    public WaveOut player;
 	private static MainWindow mainWindow;
 
 	public static MainWindow GetMainWindow(){
@@ -29,6 +30,7 @@ public partial class
 
 	private MainWindow() : base(Gtk.WindowType.Toplevel)
     {
+        this.player = new WaveOut();
         Build();
     }
 
@@ -75,13 +77,13 @@ public partial class
             // MemoryStream memoryStream = new MemoryStream(cancionBytes);
             byte[] array = new byte[cancionBytes.Length];
             MemoryStream memory = new MemoryStream(cancionBytes);
-            var wave = new WaveOut();
+           
 
 
             Mp3FileReader fileReader = new Mp3FileReader(memory);
             //
-           wave.Init(fileReader);
-            wave.Play();
+           player.Init(fileReader);
+            player.Play();
 
 
             Console.Write(memory.Position);
@@ -121,32 +123,32 @@ public partial class
 	{
 		SocketClient.GetSocketClient().send(XMLGenerator.Generate("None", "None", 2));
 		XDocument xml = SocketClient.GetSocketClient().Listen();
-        Console.Write(xml.Root.Element("SongData").Element("SongString").Value);//.Element("SongString")
+        Console.Write(xml.Root.Element("SongData").Value.ToString());//.Element("SongString")
+        string sb = xml.Root.Element("SongData").Value;
 
 
 
-        byte[] song = System.Text.Encoding.UTF8.GetBytes(xml.Root.Element("SongData").Element("SongString").Value + "\n");
+        byte[] song = Convert.FromBase64String(sb);
        
         
        
-        Console.Write(System.Text.Encoding.UTF8.GetString(song));
+        //Console.Write(System.Text.Encoding.UTF8.GetString(song));
 
 
 
         //MemoryStream memory = new MemoryStream(song);
         
-        File.Create("Cancion.mp3").Close();
-        File.WriteAllBytes("Cancion.mp3", song);
-        byte[] shong = File.ReadAllBytes("Cancion.mp3");
-       // MemoryStream stream = new MemoryStream(shong);
+        //File.Create("Cancion.mp3").Close();
+        //File.WriteAllBytes("Cancion.mp3", song);
+        //byte[] shong = File.ReadAllBytes("Cancion.mp3");
+       MemoryStream stream = new MemoryStream(song);
         //stream.ReadTimeout = 1000000;
         //stream.WriteTimeout = 1000000;
         //byte[] songs = ; 
         
-        WaveOut waveOut = new WaveOut();
-       /* Mp3FileReader mp3FileReader = new Mp3FileReader(stream);
-        waveOut.Init(mp3FileReader);
-        waveOut.Play();*/
+        Mp3FileReader mp3FileReader = new Mp3FileReader(stream);
+        player.Init(mp3FileReader);
+        player.Play();
 
 
 	}

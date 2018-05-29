@@ -33,12 +33,16 @@ namespace OdysseyClient
 
 		}
         
-        internal static XDocument Generate(string user, string passwordString,int operationCode)
+		internal static XDocument Generate(string user, string passwordString, string style, string fullName, string age, string friends,int operationCode)
         {
 			XDocument xml = new XDocument(new XElement("Data",
                                                               new XElement("opCode", operationCode),
 			                                                  new XElement("User", user),
-			                                                  new XElement("Password", passwordString)));
+			                                                  new XElement("Password", passwordString),
+			                                                  new XElement("Style",style),
+			                                           new XElement("Name",fullName),
+			                                           new XElement("Age",age),
+			                                           new XElement("Friends",friends)));
 			return xml;
         }
 		public static XDocument RequestUsers()
