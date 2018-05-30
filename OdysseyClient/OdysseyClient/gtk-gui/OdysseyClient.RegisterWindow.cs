@@ -40,7 +40,7 @@ namespace OdysseyClient
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entry1 = new global::Gtk.Entry();
 			this.entry1.CanFocus = true;
-			this.entry1.Name = "entry1";
+			this.entry1.Name = "nameSong";
 			this.entry1.Text = global::Mono.Unix.Catalog.GetString("Usuario");
 			this.entry1.IsEditable = true;
 			this.entry1.InvisibleChar = '●';

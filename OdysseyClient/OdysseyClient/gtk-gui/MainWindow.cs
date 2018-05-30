@@ -209,6 +209,13 @@ public partial class MainWindow
 		this.button1.Clicked += new global::System.EventHandler(this.Play);
 		this.button3.Clicked += new global::System.EventHandler(this.Stop);
         this.button21.Clicked += new global::System.EventHandler(this.PlaySeletedSong);
+        this.button22.Clicked += new global::System.EventHandler(this.PlaySeletedSong);
+        this.button23.Clicked += new global::System.EventHandler(this.PlaySeletedSong);
+        this.button24.Clicked += new global::System.EventHandler(this.PlaySeletedSong);
+        this.button37.Clicked += new global::System.EventHandler(this.PreviousPage);
+        this.button38.Clicked += new global::System.EventHandler(this.NextPage);
+
+
 
 
 

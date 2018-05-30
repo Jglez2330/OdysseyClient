@@ -17,11 +17,13 @@ public partial class
    {
     public WaveOut player;
     public bool playing = false;
+    public int page = 0;
 	private static MainWindow mainWindow;
 
 	public static MainWindow GetMainWindow(){
 		if (mainWindow == null){
 			mainWindow = new MainWindow();
+            
 		}
 		return mainWindow;
         
@@ -34,34 +36,56 @@ public partial class
         this.player = new WaveOut();
         Build();
 
-        XDocument xml = XMLGenerator.RequestSongs(1);
-        int i = 0;
-        Button[] arrayButtons = { button21, button22, button23, button24 };
-        button21.Label = " ";
-        button22.Label = " ";
-        button23.Label = " ";
-        button24.Label = " ";
+        XDocument xml = XMLGenerator.RequestSongs(0);
+        UpdateSongs(xml);
+        
+    }
 
-        foreach (XElement x in xml.Root.Elements())
+    protected void UpdateSongs(XDocument xml)
+    {
+        try
         {
-            //button21.Label = x.Element("SongName").Value;
-            foreach ( XElement y in x.Elements())
+            int i = 0;
+            Button[] arrayButtons = { button21, button22, button23, button24 };
+            button21.Label = " ";
+            button22.Label = " ";
+            button23.Label = " ";
+            button24.Label = " ";
+            
+
+            foreach (XElement x in xml.Root.Elements())
             {
-                if (y.Name == "SongName")
+                //button21.Label = x.Element("SongName").Value;
+                foreach (XElement y in x.Elements())
                 {
-                    arrayButtons[i].Label = y.Value;
-                    
-                }else if(y.Name == "ArtistName")
-                {
-                    arrayButtons[i].Label +=" by " + y.Value;
+                    if (y.Name == "SongName")
+                    {
+                        arrayButtons[i].Label = y.Value;
+
+                    }
+                    else if (y.Name == "ArtistName")
+                    {
+                        arrayButtons[i].Label += " by " + y.Value;
+                    }
                 }
-            }
                 i++;
 
 
+            }
+           
+
         }
+        catch(Exception)
+        {
+
+        }
+        Pagina.Text = "";
+        Pagina.Text += page / 4;
+
     }
 
+
+ 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
     {
 		//SocketClient.GetSocketClient().Close();
@@ -71,79 +95,7 @@ public partial class
 
 	protected void OnAgregarCancion(object sender, EventArgs e)
 	{
-		//AddSongUI addSong = new AddSongUI();
-		//addSong.ShowAll();
-		FileChooserDialog fileChooser = new FileChooserDialog("Hola", mainWindow, FileChooserAction.Open, "Cancel", ResponseType.Cancel,
-                                                                  "Open", ResponseType.Accept);
-
-        FileFilter file = new FileFilter();
-        file.AddPattern("*.mp3");
-        //file.AddPattern("*.mp4");
-        //file.AddPattern("*.wav");
-
-        fileChooser.AddFilter(file);
-        //fileChooser.Show();
-        if (fileChooser.Run() == (int)ResponseType.Accept)
-        {
-            byte[] cancionBytes = System.IO.File.ReadAllBytes(fileChooser.Filename);
-            /* Mp3FileReader mp = new Mp3FileReader(fileChooser.Filename);
-             Mp3FileReader fileReader;// = new Mp3FileReader(memoryStream);
-             MemoryStream memoryBuffer;
-             byte[] arrayCancion = new byte[cancionBytes.Length / 200];
-
-             for (int i = 0;i < cancionBytes.Length/200; i++ )
-             {
-                 arrayCancion[i] = cancionBytes[i];
-             }
-             MemoryStream memoryStream = new MemoryStream(arrayCancion);
-
-             var wave = new WaveOut();
-
-                 fileReader = new Mp3FileReader(memoryStream);
-                 wave.Init(fileReader);
-                 wave.Play();*/
-            // MemoryStream memoryStream = new MemoryStream(cancionBytes);
-            byte[] array = new byte[cancionBytes.Length];
-            MemoryStream memory = new MemoryStream(cancionBytes);
-           
-
-
-            Mp3FileReader fileReader = new Mp3FileReader(memory);
-            //
-           player.Init(fileReader);
-            player.Play();
-
-
-            Console.Write(memory.Position);
-            
-            
-           
-                
-
-
-            
-           
-
-                 
-        
-
-            //	SocketClient.GetSocketClient().send(XMLGenerator.Generate("rock","NightMoves","BobSeger","Unknown", 0, "Hola", 0, cancionBytes));
-            //MediaPlayer mediaPlayer = new MediaPlayer();
-
-           // MediaPlayer.MediaPlayerClass = new MediaPlayer.MediaPlayerClass();
-           
-
-			//Audio audio = new Audio();
-			//audio.Play(cancionBytes, Microsoft.VisualBasic.AudioPlayMode.WaitToComplete);
-
-
-
-
-
-        }
-		//SocketClient.GetSocketClient().Close();
-
-        fileChooser.Destroy();
+        AddSongUI addSongUI = new AddSongUI(mainWindow);
 
     }
 
@@ -207,32 +159,35 @@ public partial class
         try
         {
             Gtk.Button button = (Button)sender;
-            string songRequested = "";
-            string songByArtist = "";
-            char separator = " ".ToCharArray()[0];
-            songRequested = button.Label.Split(separator)[0];
-            songByArtist = button.Label.Split(separator)[2];
-
-            XDocument xml = new XDocument(new XElement("Data",
-                new XElement("opCode", 30),
-                new XElement("Song", songRequested),
-                new XElement("Artist", songByArtist)));
-            SocketClient.GetSocketClient().send(xml);
-            xml = SocketClient.GetSocketClient().Listen();
-            byte[] song = Convert.FromBase64String(xml.Root.Element("Reply").Value);
-            MemoryStream memoryStream = new MemoryStream(song);
-            Mp3FileReader mp3FileReader = new Mp3FileReader(memoryStream);
-            try
+            if (button.Label != " ")
             {
-                player.Dispose();
-                player = new WaveOut();
-            }catch (Exception)
-            {
+                string songRequested = "";
+                string songByArtist = "";
+                char separator = " ".ToCharArray()[0];
+                songRequested = button.Label.Split(separator)[0];
+                songByArtist = button.Label.Split(separator)[2];
 
+                XDocument xml = new XDocument(new XElement("Data",
+                    new XElement("opCode", 30),
+                    new XElement("Song", songRequested),
+                    new XElement("Artist", songByArtist)));
+                SocketClient.GetSocketClient().send(xml);
+                xml = SocketClient.GetSocketClient().Listen();
+                byte[] song = Convert.FromBase64String(xml.Root.Element("Reply").Value);
+                MemoryStream memoryStream = new MemoryStream(song);
+                Mp3FileReader mp3FileReader = new Mp3FileReader(memoryStream);
+                try
+                {
+                    player.Dispose();
+                    player = new WaveOut();
+                }
+                catch (Exception)
+                {
+
+                }
+                player.Init(mp3FileReader);
+                player.Play();
             }
-            player.Init(mp3FileReader);
-            player.Play();
-            
 
 
         }catch(Exception)
@@ -245,9 +200,22 @@ public partial class
 
 	protected void PreviousPage(object sender, EventArgs e)
 	{
-	}
+        --page;
+        if (page < 0)
+        {
+            page = 0;
+        }
+        XDocument xml = XMLGenerator.RequestSongs(page);
+        UpdateSongs(xml);
+       
+    }
 
 	protected void NextPage(object sender, EventArgs e)
 	{
-	}
+        page++;
+       
+        XDocument xml = XMLGenerator.RequestSongs(page);
+        UpdateSongs(xml);
+        
+    }
 }
