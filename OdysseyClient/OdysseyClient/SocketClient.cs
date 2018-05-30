@@ -5,11 +5,15 @@ using System;
 using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Threading;
+using Zirpl.Spotify.MetadataApi;
 
 namespace OdysseyClient
 {
     public class SocketClient
+        
     {
+        
+        
         private Socket socket;
         private static SocketClient SocketClientInstance;
         private string ip = "192.168.0.103";
@@ -19,6 +23,8 @@ namespace OdysseyClient
             try
             {
 
+                SpotifyMetadataApiClient client = new SpotifyMetadataApiClient();
+                
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(ip);//Dns.GetHostName());  
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint ipEndpoint = new IPEndPoint(ipAddress, 3000);

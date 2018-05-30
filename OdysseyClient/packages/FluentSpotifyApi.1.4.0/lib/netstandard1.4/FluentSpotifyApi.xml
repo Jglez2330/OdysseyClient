@@ -1,0 +1,3937 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FluentSpotifyApi</name>
+    </assembly>
+    <members>
+        <member name="T:FluentSpotifyApi.Builder.Albums.IAlbumBuilder">
+            <summary>
+            The builder for "albums/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Albums.IAlbumBuilder.Tracks">
+            <summary>
+            Gets builder for "albums/{id}/tracks" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Albums.IAlbumBuilder.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information for a single album.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code. </param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Albums.IAlbumsBuilder">
+            <summary>
+            The builder for "albums?ids={ids}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Albums.IAlbumsBuilder.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information for multiple albums identified by their Spotify IDs.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Albums.IAlbumTracksBuilder">
+            <summary>
+            The builder for "albums/{id}/tracks" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Albums.IAlbumTracksBuilder.GetAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information about an album’s tracks.
+            </summary>
+            <param name="limit">The maximum number of tracks to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first track to return. Default: 0 (the first object).</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Artists.AlbumType">
+            <summary>
+            The album type.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Artists.AlbumType.Album">
+            <summary>
+            The album
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Artists.AlbumType.Single">
+            <summary>
+            The single
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Artists.AlbumType.AppearsOn">
+            <summary>
+            The appears on
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Artists.AlbumType.Compilation">
+            <summary>
+            The compilation
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Artists.IArtistAlbumsBuilder">
+            <summary>
+            The builder for "artists/{id}/albums" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Artists.IArtistAlbumsBuilder.GetAsync(System.Collections.Generic.IEnumerable{FluentSpotifyApi.Builder.Artists.AlbumType},System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information about an artist’s albums. 
+            </summary>
+            <param name="albumTypes">The album types. Can be used together with <paramref name="dynamicAlbumTypes"/>.</param>
+            <param name="dynamicAlbumTypes">The dynamic album types. Can be used together with <paramref name="albumTypes"/>.</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="limit">The number of album objects to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first album to return. Default: 0 (i.e., the first album).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Artists.IArtistBuilder">
+            <summary>
+            The builder for "artists/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Artists.IArtistBuilder.Albums">
+            <summary>
+            Gets builder for "artists/{id}/albums" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Artists.IArtistBuilder.TopTracks">
+            <summary>
+            Gets builder for "artists/{id}/top-tracks" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Artists.IArtistBuilder.RelatedArtists">
+            <summary>
+            Gets builder for "artists/{id}/related-artists" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Artists.IArtistBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information for a single artist identified by their unique Spotify ID.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Artists.IArtistRelatedArtistsBuilder">
+            <summary>
+            The builder for "artists/{id}/related-artists" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Artists.IArtistRelatedArtistsBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information about artists similar to a given artist. 
+            Similarity is based on analysis of the Spotify community’s listening history.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Artists.IArtistsBuilder">
+            <summary>
+            The builder for "artists?ids={ids}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Artists.IArtistsBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information for several artists based on their Spotify IDs.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Artists.IArtistTopTracksBuilder">
+            <summary>
+            The builder for "artists/{id}/top-tracks".
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Artists.IArtistTopTracksBuilder.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information about an artist’s top tracks by country.
+            </summary>
+            <param name="country">ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseBuilder">
+            <summary>
+            The builder for "browse" endpoints that are used for getting playlists and new album releases
+            featured on Spotify’s Browse tab.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Browse.IBrowseBuilder.FeaturedPlaylists">
+            <summary>
+            Gets builder for "browse/featured-playlists" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Browse.IBrowseBuilder.NewReleases">
+            <summary>
+            Gets builder for "browse/new-releases" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Browse.IBrowseBuilder.Categories">
+            <summary>
+            Gets builder for "browse/categories" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Browse.IBrowseBuilder.Recommendations">
+            <summary>
+            Gets builder for "recommendations" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseBuilder.Category(System.String)">
+            <summary>
+            Gets builder for "categories/{id}" endpoint.
+            </summary>
+            <param name="id">The category ID.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseCategoriesBuilder">
+            <summary>
+            The builder for "browse/categories" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseCategoriesBuilder.GetAsync(System.String,System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
+            </summary>
+            <param name="country">A country: an ISO 3166-1 alpha-2 country code.</param>
+            <param name="locale">
+            The desired language, consisting of an ISO 639 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. (e.g. es_MX)
+            </param>
+            <param name="limit">The maximum number of categories to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first item to return. Default: 0 (the first object).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseCategoryBuilder">
+            <summary>
+            The builder for "categories/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Browse.IBrowseCategoryBuilder.Playlists">
+            <summary>
+            Gets builder for "browse/categories/{category_id}/playlists" endpoint.
+            </summary>
+            <value>
+            The builder for "browse/categories/{category_id}/playlists" endpoint.
+            </value>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseCategoryBuilder.GetAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
+            </summary>
+            <param name="country">A country: an ISO 3166-1 alpha-2 country code.</param>
+            <param name="locale">
+            The desired language, consisting of an ISO 639 language code and an ISO 3166-1 alpha-2 country code, 
+            joined by an underscore. (e.g. es_MX)
+            </param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseCategoryPlaylistsBuilder">
+            <summary>
+            The builder for "browse/categories/{category_id}/playlists" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseCategoryPlaylistsBuilder.GetAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of Spotify playlists tagged with a particular category.
+            </summary>
+            <param name="country">A country: an ISO 3166-1 alpha-2 country code.</param>
+            <param name="limit">The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50. </param>
+            <param name="offset">The index of the first item to return. Default: 0 (the first object).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseFeaturedPlaylistsBuilder">
+            <summary>
+            The builder for "browse/featured-playlists" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseFeaturedPlaylistsBuilder.GetAsync(System.String,System.String,System.Nullable{System.DateTime},System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of Spotify featured playlists (shown, for example, on a Spotify player’s “Browse” tab).
+            </summary>
+            <param name="locale">
+            The desired language, consisting of a lowercase ISO 639 language code and an uppercase ISO 3166-1 alpha-2 country code, 
+            joined by an underscore. (e.g. es_MX)
+            </param>
+            <param name="country">A country: an ISO 3166-1 alpha-2 country code.</param>
+            <param name="timestamp">A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.</param>
+            <param name="limit">The limit. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first item to return. Default: 0 (the first object).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseNewReleasesBuilder">
+            <summary>
+            The builder for "browse/new-releases" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseNewReleasesBuilder.GetAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of new album releases featured in Spotify(shown, for example, on a Spotify player’s “Browse” tab).
+            </summary>
+            <param name="country">A country: an ISO 3166-1 alpha-2 country code.</param>
+            <param name="limit">The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first item to return. Default: 0 (the first object).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.IBrowseRecommendationsBuilder">
+            <summary>
+            The builder for "recommendations" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.IBrowseRecommendationsBuilder.GetAsync(System.Int32,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder},System.Threading.CancellationToken)">
+            <summary>
+            Create a playlist-style listening experience based on seed artists, tracks and genres.
+            </summary>
+            <param name="limit">The target size of the list of recommended tracks. Default: 20. Minimum: 1. Maximum: 100.</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="seedArtists">The list of Spotify IDs for seed artists. Maximum: 5.</param>
+            <param name="seedGenres">The list of genres. Maximum: 5.</param>
+            <param name="seedTracks">The list of Spotify IDs for a seed track. Maximum: 5</param>
+            <param name="buildTunableTrackAttributes">The action for building tunable track attributes.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder`1">
+            <summary>
+            The tunable track attribute builder.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder`1.Min(`0)">
+            <summary>
+            Sets min value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder`1.Max(`0)">
+            <summary>
+            Sets max value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder`1.Target(`0)">
+            <summary>
+            Sets target value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder">
+            <summary>
+            The tunable track attributes builder.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Acousticness(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets acousticnesses.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Danceability(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets danceability.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.DurationMs(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Int32}})">
+            <summary>
+            Sets duration in milliseconds.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Energy(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets energy.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Instrumentalness(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets instrumentalness.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Key(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Int32}})">
+            <summary>
+            Sets key.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Liveness(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets liveness.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Loudness(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets loudness.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Mode(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Int32}})">
+            <summary>
+            Sets mode.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Popularity(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Int32}})">
+            <summary>
+            Sets popularity.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Speechiness(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets speechiness.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Tempo(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets tempo.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.TimeSignature(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Int32}})">
+            <summary>
+            Sets time signature.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.Valence(System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{System.Single}})">
+            <summary>
+            Sets valence.
+            </summary>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributesBuilder.DynamicAttribute``1(System.String,System.Action{FluentSpotifyApi.Builder.Browse.ITuneableTrackAttributeBuilder{``0}})">
+            <summary>
+            Sets dynamic attribute.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="buildAttribute">The build attribute action.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Following.IGetFollowedEntitiesBuilder`1">
+            <summary>
+            The builder for "me/following endpoint".
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.IGetFollowedEntitiesBuilder`1.GetAsync(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the current user’s followed artists.
+            </summary>
+            <param name="limit">The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="after">The last artist ID retrieved from the previous request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Following.IManageFollowedEntitiesBuilder">
+            <summary>
+            The builder for "me/following" endpoint with IDs.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.IManageFollowedEntitiesBuilder.FollowAsync(System.Threading.CancellationToken)">
+            <summary>
+            Add the current user as a follower of one or more artists or other Spotify users.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.IManageFollowedEntitiesBuilder.UnfollowAsync(System.Threading.CancellationToken)">
+            <summary>
+            Remove the current user as a follower of one or more artists or other Spotify users.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.IManageFollowedEntitiesBuilder.CheckAsync(System.Threading.CancellationToken)">
+            <summary>
+            Check to see if the current user is following one or more artists or other Spotify users.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Following.Playlist.IFollowingPlaylistBuilder">
+            <summary>
+            The builder for "users/{ownerId}/playlists/{playlistId}/followers" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.Playlist.IFollowingPlaylistBuilder.FollowAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Add the current user as a follower of a playlist.
+            </summary>
+            <param name="isPublic">If true the playlist will be included in user's public playlists, if false it will remain private. Default: true.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.Playlist.IFollowingPlaylistBuilder.UnfollowAsync(System.Threading.CancellationToken)">
+            <summary>
+            Remove the current user as a follower of a playlist.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Following.Playlist.IFollowingPlaylistBuilder.CheckAsync(System.Threading.CancellationToken)">
+            <summary>
+            Check to see if current user is following a specified playlist.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.IFollowingBuilder">
+            <summary>
+            The builder for "me/following" and "users/{ownerId}/playlists/{playlistId}/followers" endpoints.
+            These endpoints allow you manage the artists, users and playlists that a Spotify user follows.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IFollowingBuilder.Artists">
+            <summary>
+            Gets builder for "me/following?type=artist" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IFollowingBuilder.Artists(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "me/following?type=artist" endpoint with IDs.
+            </summary>
+            <param name="ids">
+            The artist IDs. Maximum: 50.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IFollowingBuilder.Users(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "me/following?type=user" endpoint.
+            </summary>
+            <param name="ids">
+            The user IDs. Maximum: 50.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IFollowingBuilder.Playlist(System.String,System.String)">
+            <summary>
+            Gets builder for "users/{ownerId}/playlists/{playlistId}/followers" endpoint.
+            </summary>
+            <param name="ownerId">The Spotify user ID of the person who owns the playlist.</param>
+            <param name="playlistId">The Spotify ID of the playlist.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.ILibraryBuilder">
+            <summary>
+            The builder for "me/albums" and "me/tracks" endpoints.
+            These endpoints are used for retrieving information about, and managing, tracks and albums 
+            that the current user has saved in their “Your Music” library.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.ILibraryBuilder.Tracks">
+            <summary>
+            Gets builder for "me/tracks" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.ILibraryBuilder.Tracks(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "me/tracks" endpoint with IDs.
+            </summary>
+            <param name="ids">
+            The track IDs. Maximum: 50.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.ILibraryBuilder.Albums">
+            <summary>
+            Gets builder for "me/albums" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.ILibraryBuilder.Albums(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "me/albums" endpoint with IDs.
+            </summary>
+            <param name="ids">
+            The album IDs. Maximum: 50.
+            </param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.IMeBuilder">
+            <summary>
+            The builder for "me" and "users/{myUserId}/playlists" endpoints.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IMeBuilder.Library">
+            <summary>
+            Gets builder for "me/albums" and "me/tracks" endpoints.
+            These endpoints are used for retrieving information about, and managing, tracks and albums 
+            that the current user has saved in their “Your Music” library.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IMeBuilder.Personalization">
+            <summary>
+            Gets builder for "me/top" and "me/player" endpoints.
+            These endpoints are used for retrieving information about the user’s listening habits.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IMeBuilder.Following">
+            <summary>
+            Gets builder for "me/following" and "users/{ownerId}/playlists/{playlistId}/followers" endpoints.
+            These endpoints allow you manage the artists, users and playlists that a Spotify user follows.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IMeBuilder.Playlists">
+            <summary>
+            Gets builder for "users/{myUserId}/playlists" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IMeBuilder.Player">
+            <summary>
+            Gets builder for "me/player" endpoint.
+            This endpoint is used for controlling Spotify devices.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IMeBuilder.Playlist(System.String)">
+            <summary>
+            Gets builder for "users/{myUserId}/playlists/{id}" endpoint.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IMeBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get detailed profile information about the current user (including the current user’s username).
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.IPersonalizationBuilder">
+            <summary>
+            The builder for "me/top" and "me/player" endpoints.
+            These endpoints are used for retrieving information about the user’s listening habits.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IPersonalizationBuilder.TopArtists">
+            <summary>
+            Gets builder for "me/top/artists" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IPersonalizationBuilder.TopTracks">
+            <summary>
+            Gets builder for "me/top/tracks" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IPersonalizationBuilder.RecentlyPlayedTracks">
+            <summary>
+            Gets builder for "me/player/recently-played" endpoint.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.IPlayerBuilder">
+            <summary>
+            The builder for "me/player" endpoint.
+            This endpoint is used for controlling Spotify devices.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.IPlayerBuilder.Devices">
+            <summary>
+            Gets builder for "me/player/devices" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IPlayerBuilder.Playback">
+            <summary>
+            Gets builder for active device's playback.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.IPlayerBuilder.Playback(System.String)">
+            <summary>
+            Gets builder for specified device's playback.
+            </summary>
+            <param name="deviceId">The device ID.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Library.IGetLibraryEntitiesBuilder`1">
+            <summary>
+            The builder for "me/entities" endpoint.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Library.IGetLibraryEntitiesBuilder`1.GetAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of the songs or albums saved in the current Spotify user’s “Your Music” library.
+            </summary>
+            <param name="limit">The maximum number of objects to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first object to return. Default: 0 (i.e., the first object).</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Library.IManageLibraryEntitiesBuilder">
+            <summary>
+            The builder for me/entities endpoint with IDs.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Library.IManageLibraryEntitiesBuilder.SaveAsync(System.Threading.CancellationToken)">
+            <summary>
+            Save one or more tracks or albums to the current user’s “Your Music” library.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Library.IManageLibraryEntitiesBuilder.RemoveAsync(System.Threading.CancellationToken)">
+            <summary>
+            Remove one or more tracks or albums from the current user’s “Your Music” library.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Library.IManageLibraryEntitiesBuilder.CheckAsync(System.Threading.CancellationToken)">
+            <summary>
+            Check if one or more tracks or albums is already saved in the current Spotify user’s “Your Music” library.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Personalization.RecentlyPlayed.IRecentlyPlayedTracksBuilder">
+            <summary>
+            The builder for "me/player/recently-played" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Personalization.RecentlyPlayed.IRecentlyPlayedTracksBuilder.GetAsync(System.Int32,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Get tracks from the current user’s recently played tracks.
+            </summary>
+            <param name="limit">The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="after">A Unix timestamp in milliseconds. Returns all items after (but not including) this cursor position.</param>
+            <param name="before">A Unix timestamp in milliseconds. Returns all items before (but not including) this cursor position.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Personalization.Top.ITopBuilder`1">
+            <summary>
+            The builder for "me/top/entity" endpoint.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Personalization.Top.ITopBuilder`1.GetAsync(System.Int32,System.Int32,FluentSpotifyApi.Builder.Me.Personalization.Top.TimeRange,System.Threading.CancellationToken)">
+            <summary>
+            Get the current user’s top artists or tracks based on calculated affinity.
+            </summary>
+            <param name="limit">The number of entities to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first entity to return. Default: 0 (i.e., the first track).</param>
+            <param name="timeRange">Over what time frame the affinities are computed. Default: <see cref="F:FluentSpotifyApi.Builder.Me.Personalization.Top.TimeRange.MediumTerm"/>.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Personalization.Top.TimeRange">
+            <summary>
+            The affinities time frame.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Me.Personalization.Top.TimeRange.LongTerm">
+            <summary>
+            Calculated from several years of data and including all new data as it becomes available.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Me.Personalization.Top.TimeRange.MediumTerm">
+            <summary>
+            Approximately last 6 months.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Me.Personalization.Top.TimeRange.ShortTerm">
+            <summary>
+            Approximately last 4 weeks.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IActiveDevicePlaybackBuilder">
+            <summary>
+            The builder for active device's playback.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder" />
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IActiveDevicePlaybackBuilder.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get information about the user’s current playback state, including track, track progress, and active device.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IActiveDevicePlaybackBuilder.GetCurrentTrackAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the object currently being played on the user’s Spotify account.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IActiveDevicePlaybackBuilder.TransferAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Transfer playback to a new device and determine if it should start playing.
+            </summary>
+            <param name="deviceId">The ID of the device on which playback should be started/transferred.</param>
+            <param name="play">Determines if playback should start playing.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IDevicePlaybackBuilder">
+            <summary>
+            The builder for specified device's playback.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder" />
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IDevicesBuilder">
+            <summary>
+            The builder for "me/player/devices" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IDevicesBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get information about a user’s available devices.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder">
+            <summary>
+            The playback builder.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.From">
+            <summary>
+            Gets builder for starting new playback from specified entities.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.ResumeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Resumes user's playback.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.PauseAsync(System.Threading.CancellationToken)">
+            <summary>
+            Pauses user's playback.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.SkipToNextAsync(System.Threading.CancellationToken)">
+            <summary>
+            Skips to next track in the user’s queue.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.SkipToPreviousAsync(System.Threading.CancellationToken)">
+            <summary>
+            Skips to previous track in the user’s queue.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.SeekAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Seeks to the given position in the user’s currently playing track.
+            </summary>
+            <param name="position">The position.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.SetRepeatModeAsync(FluentSpotifyApi.Builder.Me.Player.RepeatMode,System.Threading.CancellationToken)">
+            <summary>
+            Sets the repeat mode for user’s playback.
+            </summary>
+            <param name="repeatMode">The repeat mode.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.SetVolumeAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Sets the volume for user’s playback.
+            </summary>
+            <param name="volumePercent">The volume in percent.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.TurnOnShuffleAsync(System.Threading.CancellationToken)">
+            <summary>
+            Turns shuffle on for user's playback.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackBuilder.TurnOffShuffleAsync(System.Threading.CancellationToken)">
+            <summary>
+            Turns shuffle off for user's playback.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackFromBuilder">
+            <summary>
+            The builder for starting new playback from specified entities.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackFromBuilder.Artist(System.String)">
+            <summary>
+            Gets builder for starting new playback from specified artist ID.
+            </summary>
+            <param name="id">The Spotify ID of the artist.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackFromBuilder.Album(System.String)">
+            <summary>
+            Gets builder for starting new playback from specified album ID.
+            </summary>
+            <param name="id">The Spotify ID of the album.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackFromBuilder.Playlist(System.String,System.String)">
+            <summary>
+            Gets builder for starting new playback from specified playlist ID.
+            </summary>
+            <param name="ownerId">The Spotify user ID of the person who owns the playlist.</param>
+            <param name="playlistId">The Spotify ID of the playlist.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackFromBuilder.Tracks(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for starting new playback from specified track IDs.
+            </summary>
+            <param name="ids">The Spotify IDs of the tracks.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackPlayBuilder">
+            <summary>
+            The builder for starting new playback.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackPlayBuilder.PlayAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts new playback.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackPlayWithOffsetBuilder">
+            <summary>
+            The builder for starting new playback at specified offset.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Builder.Me.Player.IPlaybackPlayBuilder" />
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackPlayWithOffsetBuilder.StartAt(System.String)">
+            <summary>
+            Gets builder for starting new playback at specified track.
+            </summary>
+            <param name="trackId">The track ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Me.Player.IPlaybackPlayWithOffsetBuilder.StartAt(System.Int32)">
+            <summary>
+            Gets builder for starting new playback at specified position.
+            </summary>
+            <param name="position">The zero based position.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Me.Player.RepeatMode">
+            <summary>
+            The playback repeat mode.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Me.Player.RepeatMode.Track">
+            <summary>
+            Will repeat the current track. 
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Me.Player.RepeatMode.Context">
+            <summary>
+            Will repeat the current context.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Me.Player.RepeatMode.Off">
+            <summary>
+            Will turn repeat off.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Search.Entity">
+            <summary>
+            The entity.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Search.Entity.Album">
+            <summary>
+            The album
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Search.Entity.Artist">
+            <summary>
+            The artist
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Search.Entity.Playlist">
+            <summary>
+            The playlist
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Search.Entity.Track">
+            <summary>
+            The track
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Search.ISearchBuilder">
+            <summary>
+            The builder for "search" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.ISearchBuilder.Albums">
+            <summary>
+            Gets builder for "search?type=album" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.ISearchBuilder.Artists">
+            <summary>
+            Gets builder for "search?type=artist" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.ISearchBuilder.Playlists">
+            <summary>
+            Gets builder for "search?type=playlist" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.ISearchBuilder.Tracks">
+            <summary>
+            Gets builder for "search?type=track" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Search.ISearchBuilder.Entities(FluentSpotifyApi.Builder.Search.Entity[])">
+            <summary>
+            Gets builder for "search?type={entities}" endpoint.
+            </summary>
+            <param name="entities">The entities.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Search.ISearchBuilder.Entities">
+            <summary>
+            Gets builder for "search?type={allEntities}" endpoint.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Search.ISearchTypeBuilder`1">
+            <summary>
+            The builder for "search?type={entities}" endpoint.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Search.ISearchTypeBuilder`1.Matching(System.String)">
+            <summary>
+            Gets builder for "search?type={entities}&amp;q={query}" endpoint.
+            </summary>
+            <param name="query">The query.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Search.ISearchTypeBuilder`1.Matching(System.Linq.Expressions.Expression{System.Func{FluentSpotifyApi.Builder.Search.QueryFields,System.Boolean}})">
+            <summary>
+            Gets builder for "search?type={entities}&amp;q={query}" endpoint.
+            </summary>
+            <param name="predicate">
+            The predicate expression. The <c>==</c> operator is used for exact match while <see cref="M:System.String.Contains(System.String)"/> method is used for partial match. 
+            The <c>&lt;=</c> and <c>&gt;=</c> operators can be used to specify <see cref="P:FluentSpotifyApi.Builder.Search.QueryFields.Year"/> range. Multiple statements can be combined using <c>&amp;&amp;</c> 
+            or <c>||</c> operators. Since search query does not support precedence of operators, the operands and operators are just emitted from left to right.
+            There is also a limited support for negation. The <c>!=</c> operator or <c>!</c><see cref="M:System.String.Contains(System.String)"/> method call can be used to negate match.
+            To negate <see cref="P:FluentSpotifyApi.Builder.Search.QueryFields.Year"/> range, the range expression must be prefixed with <c>!</c> operator (e.g. <c>!(f.Year &gt;= 2000 &amp;&amp; f.Year &lt;= 2015)</c>). 
+            The <see cref="M:FluentSpotifyApi.Expressions.Query.QueryProvider.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})"/> method can be used to get query in string format.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Search.ISearchTypeBuilder`1.Matching(System.Linq.Expressions.Expression{System.Func{FluentSpotifyApi.Builder.Search.QueryFields,System.Boolean}},FluentSpotifyApi.Expressions.Query.QueryOptions)">
+            <summary>
+            Gets builder for "search?type={entities}&amp;q={query}" endpoint.
+            </summary>
+            <param name="predicate">The predicate expression. The <c>==</c> operator is used for exact match while <see cref="M:System.String.Contains(System.String)" /> method is used for partial match.
+            The <c>&lt;=</c> and <c>&gt;=</c> operators can be used to specify <see cref="P:FluentSpotifyApi.Builder.Search.QueryFields.Year" /> range. Multiple statements can be combined using <c>&amp;&amp;</c>
+            or <c>||</c> operators. Since search query does not support precedence of operators, the operands and operators are just emitted from left to right.
+            There is also a limited support for negation. The <c>!=</c> operator or <c>!</c><see cref="M:System.String.Contains(System.String)" /> method call can be used to negate match.
+            To negate <see cref="P:FluentSpotifyApi.Builder.Search.QueryFields.Year" /> range, the range expression must be prefixed with <c>!</c> operator (e.g. <c>!(f.Year &gt;= 2000 &amp;&amp; f.Year &lt;= 2015)</c>).
+            The <see cref="M:FluentSpotifyApi.Expressions.Query.QueryProvider.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},FluentSpotifyApi.Expressions.Query.QueryOptions)" /> method can be used to get query in string format.</param>
+            <param name="queryOptions">The query options.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Search.ISearchTypeQueryBuilder`1">
+            <summary>
+            The builder for "search?type={entities}&amp;q={query}" endpoint.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Search.ISearchTypeQueryBuilder`1.GetAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Searches for the entities of specified type by specific query.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code or the string from_token.</param>
+            <param name="limit">The maximum number of results to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first result to return. Default: 0 (i.e., the first result). Maximum offset: 100.000.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Search.QueryFields">
+            <summary>
+            The search query fields.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Any">
+            <summary>
+            Represents any field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Album">
+            <summary>
+            The album field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Artist">
+            <summary>
+            The artist field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Track">
+            <summary>
+            The track field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Year">
+            <summary>
+            The year field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Tag">
+            <summary>
+            The tag field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Genre">
+            <summary>
+            The genre field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Upc">
+            <summary>
+            The UPC field.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Search.QueryFields.Isrc">
+            <summary>
+            The ISRC field.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Search.Tag">
+            <summary>
+            The search tag
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Search.Tag.New">
+            <summary>
+            Represents albums released in last two weeks.
+            </summary>
+        </member>
+        <member name="F:FluentSpotifyApi.Builder.Search.Tag.Hipster">
+            <summary>
+            Represents albums with the lowest 10% popularity.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Tracks.ITrackAudioAnalysisBuilder">
+            <summary>
+            The builder for "audio-analysis/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Tracks.ITrackAudioAnalysisBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get a detailed audio analysis for a single track identified by its unique Spotify ID.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Tracks.ITrackAudioFeaturesBuilder">
+            <summary>
+            The builder for "audio-features/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Tracks.ITrackAudioFeaturesBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get audio feature information for a single track identified by its unique Spotify ID.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Tracks.ITrackBuilder">
+            <summary>
+            The builder for "tracks/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Tracks.ITrackBuilder.AudioAnalysis">
+            <summary>
+            Gets builder for "audio-analysis/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Tracks.ITrackBuilder.AudioFeatures">
+            <summary>
+            Gets builder for "audio-features/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Tracks.ITrackBuilder.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information for a single track identified by its unique Spotify ID.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Tracks.ITracksAudioFeaturesBuilder">
+            <summary>
+            The builder for "audio-features?ids={ids}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Tracks.ITracksAudioFeaturesBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get audio features for multiple tracks based on their Spotify IDs.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.Tracks.ITracksBuilder">
+            <summary>
+            The builder for "tracks?ids={ids}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.Tracks.ITracksBuilder.AudioFeatures">
+            <summary>
+            Gets builder for "audio-features?ids={ids}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.Tracks.ITracksBuilder.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get Spotify catalog information for multiple tracks based on their Spotify IDs.
+            </summary>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.IUserBuilder">
+            <summary>
+            The builder for "users/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.IUserBuilder.Playlists">
+            <summary>
+            Gets builder for "users/{id}/playlists" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.IUserBuilder.Playlist(System.String)">
+            <summary>
+            Gets builder for "users/{userId}/playlists/{id}" endpoint.
+            </summary>
+            <param name="id">The playlist ID.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.IUserBuilder.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get public profile information about a Spotify user.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto">
+            <summary>
+            The DTO for creating new playlists.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto"/> class.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto.Name">
+            <summary>
+            Gets or sets the name for the new playlist.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto.Public">
+            <summary>
+            Gets or sets value that indicates whether new playlist will be public. Default: true.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto.Collaborative">
+            <summary>
+            Gets or sets value that indicates whether new playlist will be collaborative. Default: false.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder">
+            <summary>
+            The builder for "users/{userId}/playlists/{id}" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.GetAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a playlist owned by a Spotify user.
+            </summary>
+            <param name="fields">A comma-separated list of the fields to return. If omitted, all fields are returned.</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.GetAsync(System.Action{FluentSpotifyApi.Expressions.Fields.IFieldsBuilder{FluentSpotifyApi.Model.FullPlaylist}},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a playlist owned by a Spotify user.
+            </summary>
+            <param name="buildFields">
+            The action for building fields.
+            The <see cref="M:FluentSpotifyApi.Expressions.Fields.FieldsProvider.Get``1(System.Action{FluentSpotifyApi.Expressions.Fields.IFieldsBuilder{``0}})"/> method can be used to get fields in string format.
+            </param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.UpdateAsync(FluentSpotifyApi.Builder.User.Playlists.UpdatePlaylistDto,System.Threading.CancellationToken)">
+            <summary>
+            Change a playlist’s name and public/private state. (The user must, of course, own the playlist.)
+            </summary>
+            <param name="updatePlaylistDto">The DTO for updating playlist.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.UpdateCoverAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.IO.Stream}},System.Threading.CancellationToken)">
+            <summary>
+            Replace the image used to represent a specific playlist.
+            </summary>
+            <param name="coverStreamProvider">The JPEG cover stream provider.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.CheckFollowersAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Check to see if one or more Spotify users are following a specified playlist.
+            </summary>
+            <param name="userIds">
+            The list of user IDs. Maximum: 5.
+            </param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.Tracks">
+            <summary>
+            Gets builder for "users/{userId}/playlists/{id}/tracks" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.Tracks(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "users/{userId}/playlists/{id}/tracks" endpoint with track IDs.
+            </summary>
+            <param name="ids">
+            The track IDs. Maximum: 100.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.Tracks(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Gets builder for "users/{userId}/playlists/{id}/tracks" endpoint with track positions.
+            </summary>
+            <param name="positions">
+            The track IDs. Maximum: 100.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistBuilder.Tracks(System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Int32[]}})">
+            <summary>
+            Gets builder for "users/{userId}/playlists/{id}/tracks" endpoint with track (ID, position) pairs.
+            </summary>
+            <param name="idsWithPositions">
+            The track IDs. Maximum: 100.
+            </param>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.IPlaylistsBuilder">
+            <summary>
+            The builder for "users/{id}/playlists" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistsBuilder.GetAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get a list of the playlists owned or followed by a Spotify user.
+            </summary>
+            <param name="limit">The maximum number of playlists to return. Default: 20. Minimum: 1. Maximum: 50.</param>
+            <param name="offset">The index of the first playlist to return. Default: 0 (the first object). Maximum offset: 100.000.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.IPlaylistsBuilder.CreateAsync(FluentSpotifyApi.Builder.User.Playlists.CreatePlaylistDto,System.Threading.CancellationToken)">
+            <summary>
+            Create a playlist for a Spotify user. (The playlist will be empty until you add tracks.)
+            </summary>
+            <param name="createPlaylistDto">New playlist DTO.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackIdsBuilder">
+            <summary>
+            The builder for "users/{userId}/playlists/{id}/tracks" endpoint with track IDs.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackIdsBuilder.AddAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Add one or more tracks to a user’s playlist.
+            </summary>
+            <param name="position">The position to insert the tracks, a zero-based index. If omitted, the tracks will be appended to the playlist.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackIdsBuilder.ReplaceAsync(System.Threading.CancellationToken)">
+            <summary>
+            Replace all the tracks in a playlist, overwriting its existing tracks. 
+            This powerful request can be useful for replacing tracks, re-ordering existing tracks, or clearing the playlist.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackIdsBuilder.RemoveAsync(System.Threading.CancellationToken)">
+            <summary>
+            Remove one or more tracks from a user’s playlist. 
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackIdsWithPositionsBuilder">
+            <summary>
+            The builder for "users/{userId}/playlists/{id}/tracks" endpoint with track (ID, position) pairs.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackIdsWithPositionsBuilder.RemoveAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes tracks by occurrences at given positions.
+            </summary>
+            <param name="snapshotId">The playlist's snapshot ID against which you want to make the changes.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackPositionsBuilder">
+            <summary>
+            The builder for "users/{userId}/playlists/{id}/tracks" endpoint with track positions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTrackPositionsBuilder.RemoveAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes tracks at given positions. 
+            </summary>
+            <param name="snapshotId">The playlist's snapshot ID against which you want to make the changes.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTracksBuilder">
+            <summary>
+            The builder for "users/{userId}/playlists/{id}/tracks" endpoint.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTracksBuilder.GetAsync(System.String,System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get full details of the tracks of a playlist owned by a Spotify user.
+            </summary>
+            <param name="fields">A comma-separated list of the fields to return. If omitted, all fields are returned.</param>
+            <param name="limit">The maximum number of tracks to return. Default: 100. Minimum: 1. Maximum: 100.</param>
+            <param name="offset">The index of the first track to return. Default: 0 (the first object).</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTracksBuilder.GetAsync(System.Action{FluentSpotifyApi.Expressions.Fields.IFieldsBuilder{FluentSpotifyApi.Model.Page{FluentSpotifyApi.Model.PlaylistTrack}}},System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get full details of the tracks of a playlist owned by a Spotify user.
+            </summary>
+            <param name="buildFields">
+            The action for building fields.
+            The <see cref="M:FluentSpotifyApi.Expressions.Fields.FieldsProvider.Get``1(System.Action{FluentSpotifyApi.Expressions.Fields.IFieldsBuilder{``0}})"/> method can be used to get fields in string format.
+            </param>
+            <param name="limit">The maximum number of tracks to return. Default: 100. Minimum: 1. Maximum: 100.</param>
+            <param name="offset">The index of the first track to return. Default: 0 (the first object).</param>
+            <param name="market">An ISO 3166-1 alpha-2 country code.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Builder.User.Playlists.Tracks.IPlaylistTracksBuilder.ReorderAsync(System.Int32,System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Reorder a track or a group of tracks in a playlist.
+            </summary>
+            <param name="rangeStart">The position of the first track to be reordered.</param>
+            <param name="insertBefore">The position where the tracks should be inserted.</param>
+            <param name="rangeLength">The amount of tracks to be reordered. Defaults to 1 if not set.</param>
+            <param name="snapshotId">The snapshot identifier.</param>
+            <param name="cancellationToken">The playlist's snapshot ID against which you want to make the changes.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Builder.User.Playlists.UpdatePlaylistDto">
+            <summary>
+            The DTO for updating the existing playlists.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.UpdatePlaylistDto.Name">
+            <summary>
+            Gets or sets the new name for the playlist.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.UpdatePlaylistDto.Public">
+            <summary>
+            Gets or sets the value that indicates whether updated playlist will be public.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.UpdatePlaylistDto.Collaborative">
+            <summary>
+            Gets or sets value that indicates whether updated playlist will be collaborative.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Builder.User.Playlists.UpdatePlaylistDto.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Client.ISpotifyHttpClient">
+            <summary>
+            The HTTP client used for Spotify Web API Requests.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Client.ITypedHttpClient" />
+        </member>
+        <member name="T:FluentSpotifyApi.Client.SpotifyHttpClient">
+            <summary>
+            The HTTP client used for Spotify Web API Requests.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Client.TypedHttpClient" />
+            <seealso cref="T:FluentSpotifyApi.Client.ISpotifyHttpClient" />
+        </member>
+        <member name="M:FluentSpotifyApi.Client.SpotifyHttpClient.#ctor(FluentSpotifyApi.Core.Client.IHttpClientWrapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Client.SpotifyHttpClient"/> class.
+            </summary>
+            <param name="httpClientWrapper">The HTTP client wrapper.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Exceptions.SpotifyDeviceUnavailableException">
+            <summary>
+            The exception that is thrown when <see cref="F:System.Net.HttpStatusCode.Accepted"/> is returned from Web API Connect requests 
+            (i.e. methods that are accessible via <see cref="P:FluentSpotifyApi.Builder.Me.IMeBuilder.Player"/> property).
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException" />
+        </member>
+        <member name="T:FluentSpotifyApi.Expressions.Fields.FieldsProvider">
+            <summary>
+            The fields provider.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Expressions.Fields.FieldsProvider.Get``1(System.Action{FluentSpotifyApi.Expressions.Fields.IFieldsBuilder{``0}})">
+            <summary>
+            Gets fields from the specified fields builder action.
+            </summary>
+            <typeparam name="TInput">The type of the input.</typeparam>
+            <param name="buildFields">The action for building fields.</param>
+            <exception cref="T:System.ArgumentException">
+            Thrown when an include or exclude expression is not valid.
+            </exception>
+        </member>
+        <member name="T:FluentSpotifyApi.Expressions.Fields.IFieldsBuilder`1">
+            <summary>
+            The fields builder.
+            </summary>
+            <typeparam name="TInput">The type of the input.</typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Expressions.Fields.IFieldsBuilder`1.Include``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Includes the specified expression.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="expression">
+            The expression to be included.
+            The indexer operator can be used to include array properties (e.g. <c>f => f.Items[0].Name</c>).
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="expression"/> is null.
+            </exception>
+        </member>
+        <member name="M:FluentSpotifyApi.Expressions.Fields.IFieldsBuilder`1.Exclude``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Excludes the specified expression.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="expression">
+            The expression to be excluded.
+            The indexer operator can be used to exclude array properties (e.g. <c>f => f.Items[0].Name</c>).
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="expression"/> is null.
+            </exception>
+        </member>
+        <member name="T:FluentSpotifyApi.Expressions.Query.QueryOptions">
+            <summary>
+            The query options.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Expressions.Query.QueryOptions.RemoveSpecialCharacters">
+            <summary>
+            If set to <c>true</c>, removes ["] characters from exact match and [":] characters from partial match.
+            Set to <c>false</c> by default.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Expressions.Query.QueryOptions.NormalizePartialMatch">
+            <summary>
+            If set to <c>true</c>, converts OR and NOT words to lowercase and distributes field name and NOT operator
+            in partial match. (e.g. <c>f => f.Artist.Contains("NOT") &amp;&amp; !f.Artist.Contains("nice so*")</c> 
+            will be converted into "artist:not NOT artist:nice NOT artist:so*")
+            Set to <c>false</c> by default.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Expressions.Query.QueryProvider">
+            <summary>
+            The query provider.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Expressions.Query.QueryProvider.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Gets query from the specified predicate expression.
+            </summary>
+            <typeparam name="TInput">The type of the input.</typeparam>
+            <param name="predicate">The predicate expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="predicate"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="predicate"/> is not valid.
+            </exception>
+        </member>
+        <member name="M:FluentSpotifyApi.Expressions.Query.QueryProvider.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},FluentSpotifyApi.Expressions.Query.QueryOptions)">
+            <summary>
+            Gets query from the specified predicate expression.
+            </summary>
+            <typeparam name="TInput">The type of the input.</typeparam>
+            <param name="predicate">The predicate expression.</param>
+            <param name="queryOptions">The query options.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="predicate"/> or <paramref name="queryOptions"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="predicate"/> is not valid.
+            </exception>
+        </member>
+        <member name="T:FluentSpotifyApi.Extensions.ServiceCollectionExtensions">
+            <summary>
+            The extension methods for registering <see cref="T:FluentSpotifyApi.IFluentSpotifyClient"/> in <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Extensions.ServiceCollectionExtensions.AddFluentSpotifyClient(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers <see cref="T:FluentSpotifyApi.IFluentSpotifyClient" /> in <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+            </summary>
+            <param name="services">The service collection.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Extensions.ServiceCollectionExtensions.AddFluentSpotifyClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{FluentSpotifyApi.IFluentSpotifyClientBuilder})">
+            <summary>
+            Registers <see cref="T:FluentSpotifyApi.IFluentSpotifyClient" /> in <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="buildClient">The client builder.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.IFluentSpotifyClient">
+            <summary>
+            The fluent Spotify client.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.IFluentSpotifyClient.Browse">
+            <summary>
+            Gets builder for "browse" endpoints that are used for getting playlists and new album releases 
+            featured on Spotify’s Browse tab.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.IFluentSpotifyClient.Me">
+            <summary>
+            Gets builder for "me" and "users/{myUserId}/playlists" endpoints.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.IFluentSpotifyClient.Search">
+            <summary>
+            Gets builder for "search" endpoint.
+            </summary>
+            <value>
+            The builder for "search" endpoint.
+            </value>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.Album(System.String)">
+            <summary>
+            Gets builder for "albums/{id}" endpoint.
+            </summary>
+            <param name="id">The album ID.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.Albums(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "albums?ids={ids}" endpoint.
+            </summary>
+            <param name="ids">The album IDs. Maximum: 20.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.Artist(System.String)">
+            <summary>
+            Gets builder for "artists/{id}" endpoint.
+            </summary>
+            <param name="id">The artist ID.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.Artists(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "artists?ids={ids}" endpoint.
+            </summary>
+            <param name="ids">
+            The artist IDs. Maximum: 50.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.Track(System.String)">
+            <summary>
+            Gets builder for "tracks/{id}" endpoint.
+            </summary>
+            <param name="id">The track ID.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.Tracks(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets builder for "tracks?ids={ids}" endpoint.
+            </summary>
+            <param name="ids">
+            The track IDs
+            Maximum: 50, for <see cref="M:FluentSpotifyApi.Builder.Tracks.ITracksBuilder.GetAsync(System.String,System.Threading.CancellationToken)"/>.
+            Maximum: 100, for <see cref="M:FluentSpotifyApi.Builder.Tracks.ITracksAudioFeaturesBuilder.GetAsync(System.Threading.CancellationToken)"/>.
+            </param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.User(System.String)">
+            <summary>
+            Gets builder for "users/{id}" endpoint.
+            </summary>
+            <param name="id">The user ID.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClient.GetAsync``1(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Gets the instance of <typeparamref name="T"/> from the <paramref name="url"/>. 
+            This method can be used for looping through the paged result where the URL of the next page can be accessed from the <see cref="P:FluentSpotifyApi.Model.Page`1.Next"/> property.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url">The URL.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.IFluentSpotifyClientBuilder">
+            <summary>
+            The <see cref="T:FluentSpotifyApi.IFluentSpotifyClient"/> builder.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClientBuilder.ConfigureOptions(System.Action{FluentSpotifyApi.Options.FluentSpotifyClientOptions})">
+            <summary>
+            Configures options.
+            </summary>
+            <param name="configureOptions">The options configuration action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClientBuilder.ConfigurePipeline(System.Action{FluentSpotifyApi.Core.Client.IPipeline})">
+            <summary>
+            Configures pipeline.
+            </summary>
+            <param name="configurePipeline">The pipeline configuration action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClientBuilder.ConfigureHttpClient(System.Action{System.Net.Http.HttpClient})">
+            <summary>
+            Configures HTTP client. 
+            </summary>
+            <param name="configureHttpClient">The HTTP client configuration action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.IFluentSpotifyClientBuilder.UseHttpClientFactory(System.Func{System.IServiceProvider,System.Net.Http.HttpClient},System.Boolean)">
+            <summary>
+            Uses HTTP client factory. If not called a default HTTP client with timeout set to 1 minute is created.
+            </summary>
+            <param name="httpClientFactory">The HTTP client factory.</param>
+            <param name="disposeWithServiceProvider">
+            If <c>true</c> the HTTP Client obtained from the <paramref name="httpClientFactory"/> will be disposed together
+            with <see cref="T:System.IServiceProvider"/>. Set to <c>false</c> by default.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.AlbumBase">
+            <summary>
+            The base class for albums.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.AlbumType">
+            <summary>
+            Gets or sets the type of the album.
+            </summary>
+            <value>
+            The type of the album.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Artists">
+            <summary>
+            Gets or sets the artists.
+            </summary>
+            <value>
+            The artists.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.AvailableMarkets">
+            <summary>
+            Gets or sets the available markets.
+            </summary>
+            <value>
+            The available markets.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Images">
+            <summary>
+            Gets or sets the images.
+            </summary>
+            <value>
+            The images.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.AlbumBase.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.ArtistBase">
+            <summary>
+            The base class for artists.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.ArtistBase.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.ArtistBase.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.ArtistBase.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.ArtistBase.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.ArtistBase.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.ArtistBase.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.AudioAnalysis">
+            <summary>
+            The audio analysis.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Meta">
+            <summary>
+            Gets or sets the meta.
+            </summary>
+            <value>
+            The meta.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Track">
+            <summary>
+            Gets or sets the track.
+            </summary>
+            <value>
+            The track.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Bars">
+            <summary>
+            Gets or sets the bars.
+            </summary>
+            <value>
+            The bars.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Beats">
+            <summary>
+            Gets or sets the beats.
+            </summary>
+            <value>
+            The beats.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Tatums">
+            <summary>
+            Gets or sets the tatums.
+            </summary>
+            <value>
+            The tatums.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Sections">
+            <summary>
+            Gets or sets the sections.
+            </summary>
+            <value>
+            The sections.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioAnalysis.Segments">
+            <summary>
+            Gets or sets the segments.
+            </summary>
+            <value>
+            The segments.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.AudioFeatures">
+            <summary>
+            The audio features.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Acousticness">
+            <summary>
+            Gets or sets the acousticness.
+            </summary>
+            <value>
+            The acousticness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.AnalysisUrl">
+            <summary>
+            Gets or sets the analysis URL.
+            </summary>
+            <value>
+            The analysis URL.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Danceability">
+            <summary>
+            Gets or sets the danceability.
+            </summary>
+            <value>
+            The danceability.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.DurationMs">
+            <summary>
+            Gets or sets the duration ms.
+            </summary>
+            <value>
+            The duration ms.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Energy">
+            <summary>
+            Gets or sets the energy.
+            </summary>
+            <value>
+            The energy.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Instrumentalness">
+            <summary>
+            Gets or sets the instrumentalness.
+            </summary>
+            <value>
+            The instrumentalness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Liveness">
+            <summary>
+            Gets or sets the liveness.
+            </summary>
+            <value>
+            The liveness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Loudness">
+            <summary>
+            Gets or sets the loudness.
+            </summary>
+            <value>
+            The loudness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>
+            The mode.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Speechiness">
+            <summary>
+            Gets or sets the speechiness.
+            </summary>
+            <value>
+            The speechiness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Tempo">
+            <summary>
+            Gets or sets the tempo.
+            </summary>
+            <value>
+            The tempo.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.TimeSignature">
+            <summary>
+            Gets or sets the time signature.
+            </summary>
+            <value>
+            The time signature.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.TrackHref">
+            <summary>
+            Gets or sets the track href.
+            </summary>
+            <value>
+            The track href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.AudioFeatures.Valence">
+            <summary>
+            Gets or sets the valence.
+            </summary>
+            <value>
+            The valence.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Bar">
+            <summary>
+            The bar.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Bar.Start">
+            <summary>
+            Gets or sets the start.
+            </summary>
+            <value>
+            The start.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Bar.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Bar.Confidence">
+            <summary>
+            Gets or sets the confidence.
+            </summary>
+            <value>
+            The confidence.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Beat">
+            <summary>
+            The beat.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Beat.Start">
+            <summary>
+            Gets or sets the start.
+            </summary>
+            <value>
+            The start.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Beat.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Beat.Confidence">
+            <summary>
+            Gets or sets the confidence.
+            </summary>
+            <value>
+            The confidence.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Meta">
+            <summary>
+            The meta.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.AnalyzerVersion">
+            <summary>
+            Gets or sets the analyzer version.
+            </summary>
+            <value>
+            The analyzer version.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.Platform">
+            <summary>
+            Gets or sets the platform.
+            </summary>
+            <value>
+            The platform.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.DetailedStatus">
+            <summary>
+            Gets or sets the detailed status.
+            </summary>
+            <value>
+            The detailed status.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.StatusCode">
+            <summary>
+            Gets or sets the status code.
+            </summary>
+            <value>
+            The status code.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.Timestamp">
+            <summary>
+            Gets or sets the timestamp.
+            </summary>
+            <value>
+            The timestamp.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.AnalysisTime">
+            <summary>
+            Gets or sets the analysis time.
+            </summary>
+            <value>
+            The analysis time.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Meta.InputProcess">
+            <summary>
+            Gets or sets the input process.
+            </summary>
+            <value>
+            The input process.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Section">
+            <summary>
+            The section.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Start">
+            <summary>
+            Gets or sets the start.
+            </summary>
+            <value>
+            The start.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Confidence">
+            <summary>
+            Gets or sets the confidence.
+            </summary>
+            <value>
+            The confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Loudness">
+            <summary>
+            Gets or sets the loudness.
+            </summary>
+            <value>
+            The loudness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Tempo">
+            <summary>
+            Gets or sets the tempo.
+            </summary>
+            <value>
+            The tempo.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.TempoConfidence">
+            <summary>
+            Gets or sets the tempo confidence.
+            </summary>
+            <value>
+            The tempo confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.KeyConfidence">
+            <summary>
+            Gets or sets the key confidence.
+            </summary>
+            <value>
+            The key confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>
+            The mode.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.ModeConfidence">
+            <summary>
+            Gets or sets the mode confidence.
+            </summary>
+            <value>
+            The mode confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.TimeSignature">
+            <summary>
+            Gets or sets the time signature.
+            </summary>
+            <value>
+            The time signature.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Section.TimeSignatureConfidence">
+            <summary>
+            Gets or sets the time signature confidence.
+            </summary>
+            <value>
+            The time signature confidence.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Segment">
+            <summary>
+            The segment.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.Start">
+            <summary>
+            Gets or sets the start.
+            </summary>
+            <value>
+            The start.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.Confidence">
+            <summary>
+            Gets or sets the confidence.
+            </summary>
+            <value>
+            The confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.LoudnessStart">
+            <summary>
+            Gets or sets the loudness start.
+            </summary>
+            <value>
+            The loudness start.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.LoudnessMaxTime">
+            <summary>
+            Gets or sets the loudness maximum time.
+            </summary>
+            <value>
+            The loudness maximum time.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.LoudnessMax">
+            <summary>
+            Gets or sets the loudness maximum.
+            </summary>
+            <value>
+            The loudness maximum.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.Pitches">
+            <summary>
+            Gets or sets the pitches.
+            </summary>
+            <value>
+            The pitches.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.Timbre">
+            <summary>
+            Gets or sets the timbre.
+            </summary>
+            <value>
+            The timbre.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Segment.LoudnessEnd">
+            <summary>
+            Gets or sets the loudness end.
+            </summary>
+            <value>
+            The loudness end.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Tatum">
+            <summary>
+            The tatum.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Tatum.Start">
+            <summary>
+            Gets or sets the start.
+            </summary>
+            <value>
+            The start.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Tatum.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Tatum.Confidence">
+            <summary>
+            Gets or sets the confidence.
+            </summary>
+            <value>
+            The confidence.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Audio.Track">
+            <summary>
+            The audio track.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.NumSamples">
+            <summary>
+            Gets or sets the number samples.
+            </summary>
+            <value>
+            The number samples.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>
+            The duration.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.SampleMd5">
+            <summary>
+            Gets or sets the sample MD5.
+            </summary>
+            <value>
+            The sample MD5.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.OffsetSeconds">
+            <summary>
+            Gets or sets the offset seconds.
+            </summary>
+            <value>
+            The offset seconds.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.WindowSeconds">
+            <summary>
+            Gets or sets the window seconds.
+            </summary>
+            <value>
+            The window seconds.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.SnalysisSampleRate">
+            <summary>
+            Gets or sets the snalysis sample rate.
+            </summary>
+            <value>
+            The snalysis sample rate.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.AnalysisChannels">
+            <summary>
+            Gets or sets the analysis channels.
+            </summary>
+            <value>
+            The analysis channels.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.EndOfFadeIn">
+            <summary>
+            Gets or sets the end of fade in.
+            </summary>
+            <value>
+            The end of fade in.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.StartOfFadeOut">
+            <summary>
+            Gets or sets the start of fade out.
+            </summary>
+            <value>
+            The start of fade out.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.Loudness">
+            <summary>
+            Gets or sets the loudness.
+            </summary>
+            <value>
+            The loudness.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.Tempo">
+            <summary>
+            Gets or sets the tempo.
+            </summary>
+            <value>
+            The tempo.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.TempoConfidence">
+            <summary>
+            Gets or sets the tempo confidence.
+            </summary>
+            <value>
+            The tempo confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.TimeSignature">
+            <summary>
+            Gets or sets the time signature.
+            </summary>
+            <value>
+            The time signature.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.TimeSignatureConfidence">
+            <summary>
+            Gets or sets the time signature confidence.
+            </summary>
+            <value>
+            The time signature confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.KeyConfidence">
+            <summary>
+            Gets or sets the key confidence.
+            </summary>
+            <value>
+            The key confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>
+            The mode.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.ModeConfidence">
+            <summary>
+            Gets or sets the mode confidence.
+            </summary>
+            <value>
+            The mode confidence.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.CodeString">
+            <summary>
+            Gets or sets the code string.
+            </summary>
+            <value>
+            The code string.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.CodeVersion">
+            <summary>
+            Gets or sets the code version.
+            </summary>
+            <value>
+            The code version.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.EchoPrintString">
+            <summary>
+            Gets or sets the echo print string.
+            </summary>
+            <value>
+            The echo print string.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.EchoPrintVersion">
+            <summary>
+            Gets or sets the echo print version.
+            </summary>
+            <value>
+            The echo print version.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.SynchString">
+            <summary>
+            Gets or sets the synch string.
+            </summary>
+            <value>
+            The synch string.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.SynchVersion">
+            <summary>
+            Gets or sets the synch version.
+            </summary>
+            <value>
+            The synch version.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.RhythmString">
+            <summary>
+            Gets or sets the rhythm string.
+            </summary>
+            <value>
+            The rhythm string.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Audio.Track.RhythmVersion">
+            <summary>
+            Gets or sets the rhythm version.
+            </summary>
+            <value>
+            The rhythm version.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Browse.Category">
+            <summary>
+            The category.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.Category.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.Category.Icons">
+            <summary>
+            Gets or sets the icons.
+            </summary>
+            <value>
+            The icons.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.Category.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.Category.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Browse.FeaturedPlaylists">
+            <summary>
+            The featured playlists.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.FeaturedPlaylists.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.FeaturedPlaylists.Playlists">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Browse.NewReleases">
+            <summary>
+            The new releases.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.NewReleases.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.NewReleases.Albums">
+            <summary>
+            Gets or sets the albums.
+            </summary>
+            <value>
+            The albums.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Browse.Recommendations">
+            <summary>
+            The recommendations.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.Recommendations.Seeds">
+            <summary>
+            Gets or sets the seeds.
+            </summary>
+            <value>
+            The seeds.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.Recommendations.Tracks">
+            <summary>
+            Gets or sets the tracks.
+            </summary>
+            <value>
+            The tracks.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Browse.RecommendationsSeed">
+            <summary>
+            The recommendations seed
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.RecommendationsSeed.AfterFilteringSize">
+            <summary>
+            Gets or sets the size of the after filtering.
+            </summary>
+            <value>
+            The size of the after filtering.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.RecommendationsSeed.AfterRelinkingSize">
+            <summary>
+            Gets or sets the size of the after relinking.
+            </summary>
+            <value>
+            The size of the after relinking.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.RecommendationsSeed.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.RecommendationsSeed.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.RecommendationsSeed.InitialPoolSize">
+            <summary>
+            Gets or sets the initial size of the pool.
+            </summary>
+            <value>
+            The initial size of the pool.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Browse.RecommendationsSeed.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Context">
+            <summary>
+            The context.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Context.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Context.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Context.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Context.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Copyright">
+            <summary>
+            The copyright.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Copyright.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Copyright.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Cursor">
+            <summary>
+            The cursor.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Cursor.Before">
+            <summary>
+            Gets or sets the before.
+            </summary>
+            <value>
+            The before.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Cursor.After">
+            <summary>
+            Gets or sets the after.
+            </summary>
+            <value>
+            The after.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.CursorBasedPage`1">
+            <summary>
+            The cursor based page.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.CursorBasedPage`1.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.CursorBasedPage`1.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.CursorBasedPage`1.Limit">
+            <summary>
+            Gets or sets the limit.
+            </summary>
+            <value>
+            The limit.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.CursorBasedPage`1.Next">
+            <summary>
+            Gets or sets the next.
+            </summary>
+            <value>
+            The next.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.CursorBasedPage`1.Cursors">
+            <summary>
+            Gets or sets the cursors.
+            </summary>
+            <value>
+            The cursors.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.CursorBasedPage`1.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>
+            The total.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Device">
+            <summary>
+            The device.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Device.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Device.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value>
+              <c>true</c> if this instance is active; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Device.IsRestricted">
+            <summary>
+            Gets or sets a value indicating whether this instance is restricted.
+            </summary>
+            <value>
+              <c>true</c> if this instance is restricted; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Device.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Device.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Device.VolumePercent">
+            <summary>
+            Gets or sets the volume percent.
+            </summary>
+            <value>
+            The volume percent.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.FollowedArtists">
+            <summary>
+            The followed artists
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FollowedArtists.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.FullAlbum">
+            <summary>
+            The full album.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.AlbumBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.Copyrights">
+            <summary>
+            Gets or sets the copyrights.
+            </summary>
+            <value>
+            The copyrights.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.ExternalIds">
+            <summary>
+            Gets or sets the external ids.
+            </summary>
+            <value>
+            The external ids.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.Genres">
+            <summary>
+            Gets or sets the genres.
+            </summary>
+            <value>
+            The genres.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.Label">
+            <summary>
+            Gets or sets the label.
+            </summary>
+            <value>
+            The label.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.Popularity">
+            <summary>
+            Gets or sets the popularity.
+            </summary>
+            <value>
+            The popularity.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.ReleaseDate">
+            <summary>
+            Gets or sets the release date.
+            </summary>
+            <value>
+            The release date.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.ReleaseDatePrecision">
+            <summary>
+            Gets or sets the release date precision.
+            </summary>
+            <value>
+            The release date precision.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullAlbum.Tracks">
+            <summary>
+            Gets or sets the tracks.
+            </summary>
+            <value>
+            The tracks.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.FullArtist">
+            <summary>
+            The full artist.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.ArtistBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullArtist.Followers">
+            <summary>
+            Gets or sets the followers.
+            </summary>
+            <value>
+            The followers.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullArtist.Genres">
+            <summary>
+            Gets or sets the genres.
+            </summary>
+            <value>
+            The genres.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullArtist.Images">
+            <summary>
+            Gets or sets the images.
+            </summary>
+            <value>
+            The images.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullArtist.Popularity">
+            <summary>
+            Gets or sets the popularity.
+            </summary>
+            <value>
+            The popularity.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.FullPlaylist">
+            <summary>
+            The full playlist.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.PlaylistBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullPlaylist.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullPlaylist.Followers">
+            <summary>
+            Gets or sets the followers.
+            </summary>
+            <value>
+            The followers.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullPlaylist.Tracks">
+            <summary>
+            Gets or sets the tracks.
+            </summary>
+            <value>
+            The tracks.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.FullTrack">
+            <summary>
+            The full track.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.TrackBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullTrack.Album">
+            <summary>
+            Gets or sets the album.
+            </summary>
+            <value>
+            The album.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullTrack.ExternalIds">
+            <summary>
+            Gets or sets the external ids.
+            </summary>
+            <value>
+            The external ids.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.FullTrack.Popularity">
+            <summary>
+            Gets or sets the popularity.
+            </summary>
+            <value>
+            The popularity.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.AudioFeaturesListMessage">
+            <summary>
+            The audio features list message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.AudioFeaturesListMessage.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.CategoriesPageMessage">
+            <summary>
+            The categories page message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.CategoriesPageMessage.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.DevicesMessage">
+            <summary>
+            The devices message.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.PlayerBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.DevicesMessage.Items">
+            <summary>
+            Gets or sets the devices.
+            </summary>
+            <value>
+            The devices.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.FullAlbumsMessage">
+            <summary>
+            The full albums message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.FullAlbumsMessage.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.FullArtistsMessage">
+            <summary>
+            The full artists message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.FullArtistsMessage.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.FullArtistsPageMessage">
+            <summary>
+            The full artists page message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.FullArtistsPageMessage.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.FullTracksMessage">
+            <summary>
+            The full tracks message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.FullTracksMessage.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.FullTracksPageMessage">
+            <summary>
+            The full tracks page message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.FullTracksPageMessage.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.SimpleAlbumsPageMessage">
+            <summary>
+            The simple albums page message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.SimpleAlbumsPageMessage.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Messages.SimplePlaylistsPageMessage">
+            <summary>
+            The simple playlist page message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Messages.SimplePlaylistsPageMessage.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>
+            The page.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.Page`1">
+            <summary>
+            The page.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Limit">
+            <summary>
+            Gets or sets the limit.
+            </summary>
+            <value>
+            The limit.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Next">
+            <summary>
+            Gets or sets the next.
+            </summary>
+            <value>
+            The next.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Offset">
+            <summary>
+            Gets or sets the offset.
+            </summary>
+            <value>
+            The offset.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Previous">
+            <summary>
+            Gets or sets the previous.
+            </summary>
+            <value>
+            The previous.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.Page`1.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>
+            The total.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlayerBase">
+            <summary>
+            The base player class.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlayHistory">
+            <summary>
+            The play history.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayHistory.Track">
+            <summary>
+            Gets or sets the track.
+            </summary>
+            <value>
+            The track.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayHistory.PlayedAt">
+            <summary>
+            Gets or sets the played at.
+            </summary>
+            <value>
+            The played at.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayHistory.Context">
+            <summary>
+            Gets or sets the context.
+            </summary>
+            <value>
+            The context.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlayingContext">
+            <summary>
+            The playing context.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.PlayerBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingContext.Device">
+            <summary>
+            Gets or sets the device.
+            </summary>
+            <value>
+            The device.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingContext.RepeatState">
+            <summary>
+            Gets or sets the state of the repeat.
+            </summary>
+            <value>
+            The state of the repeat.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingContext.ShuffleState">
+            <summary>
+            Gets or sets a value indicating whether [shuffle state].
+            </summary>
+            <value>
+              <c>true</c> if [shuffle state]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlayingObject">
+            <summary>
+            The playing object.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.PlayerBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingObject.Context">
+            <summary>
+            Gets or sets the context.
+            </summary>
+            <value>
+            The context.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingObject.Timestamp">
+            <summary>
+            Gets or sets the timestamp.
+            </summary>
+            <value>
+            The timestamp.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingObject.ProgressMs">
+            <summary>
+            Gets or sets the progress ms.
+            </summary>
+            <value>
+            The progress ms.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingObject.IsPlaying">
+            <summary>
+            Gets or sets a value indicating whether this instance is playing.
+            </summary>
+            <value>
+              <c>true</c> if this instance is playing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlayingObject.Item">
+            <summary>
+            Gets or sets the item.
+            </summary>
+            <value>
+            The item.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlaylistBase">
+            <summary>
+            The base class for playlists.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Collaborative">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:FluentSpotifyApi.Model.PlaylistBase"/> is collaborative.
+            </summary>
+            <value>
+              <c>true</c> if collaborative; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Images">
+            <summary>
+            Gets or sets the images.
+            </summary>
+            <value>
+            The images.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Owner">
+            <summary>
+            Gets or sets the owner.
+            </summary>
+            <value>
+            The owner.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Public">
+            <summary>
+            Gets or sets the public.
+            </summary>
+            <value>
+            The public.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.SnapshotId">
+            <summary>
+            Gets or sets the snapshot identifier.
+            </summary>
+            <value>
+            The snapshot identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistBase.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlaylistSnapshot">
+            <summary>
+            The playlist snapshot.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistSnapshot.SnapshotId">
+            <summary>
+            Gets or sets the snapshot identifier.
+            </summary>
+            <value>
+            The snapshot identifier.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PlaylistTrack">
+            <summary>
+            The playlist track.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistTrack.AddedAt">
+            <summary>
+            Gets or sets the added at.
+            </summary>
+            <value>
+            The added at.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistTrack.AddedBy">
+            <summary>
+            Gets or sets the added by.
+            </summary>
+            <value>
+            The added by.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistTrack.IsLocal">
+            <summary>
+            Gets or sets a value indicating whether this instance is local.
+            </summary>
+            <value>
+              <c>true</c> if this instance is local; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.PlaylistTrack.Track">
+            <summary>
+            Gets or sets the track.
+            </summary>
+            <value>
+            The track.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.PublicUser">
+            <summary>
+            The public user.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Model.UserBase" />
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SavedAlbum">
+            <summary>
+            The saved album.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SavedAlbum.AddedAt">
+            <summary>
+            Gets or sets the added at.
+            </summary>
+            <value>
+            The added at.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SavedAlbum.Album">
+            <summary>
+            Gets or sets the album.
+            </summary>
+            <value>
+            The album.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SavedTrack">
+            <summary>
+            The saved track.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SavedTrack.AddedAt">
+            <summary>
+            Gets or sets the added at.
+            </summary>
+            <value>
+            The added at.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SavedTrack.Track">
+            <summary>
+            Gets or sets the track.
+            </summary>
+            <value>
+            The track.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SearchResult">
+            <summary>
+            The search result.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SearchResult.Albums">
+            <summary>
+            Gets or sets the albums.
+            </summary>
+            <value>
+            The albums.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SearchResult.Artists">
+            <summary>
+            Gets or sets the artists.
+            </summary>
+            <value>
+            The artists.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SearchResult.Tracks">
+            <summary>
+            Gets or sets the tracks.
+            </summary>
+            <value>
+            The tracks.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SearchResult.Playlists">
+            <summary>
+            Gets or sets the playlists.
+            </summary>
+            <value>
+            The playlists.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SimpleAlbum">
+            <summary>
+            The simple album.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.AlbumBase" />
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SimpleArtist">
+            <summary>
+            The simple artist.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.ArtistBase" />
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SimplePlaylist">
+            <summary>
+            The simple playlist.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.PlaylistBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Model.SimplePlaylist.Tracks">
+            <summary>
+            Gets or sets the tracks.
+            </summary>
+            <value>
+            The tracks.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.SimpleTrack">
+            <summary>
+            The simple track.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Model.TrackBase" />
+        </member>
+        <member name="T:FluentSpotifyApi.Model.TrackBase">
+            <summary>
+            The base class for tracks.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.Artists">
+            <summary>
+            Gets or sets the artists.
+            </summary>
+            <value>
+            The artists.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.AvailableMarkets">
+            <summary>
+            Gets or sets the available markets.
+            </summary>
+            <value>
+            The available markets.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.DiscNumber">
+            <summary>
+            Gets or sets the disc number.
+            </summary>
+            <value>
+            The disc number.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.DurationMs">
+            <summary>
+            Gets or sets the duration ms.
+            </summary>
+            <value>
+            The duration ms.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.IsExplicit">
+            <summary>
+            Gets or sets a value indicating whether this instance is explicit.
+            </summary>
+            <value>
+              <c>true</c> if this instance is explicit; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.IsPlayable">
+            <summary>
+            Gets or sets a value indicating whether this instance is playable.
+            </summary>
+            <value>
+              <c>true</c> if this instance is playable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.LinkedFrom">
+            <summary>
+            Gets or sets the linked from.
+            </summary>
+            <value>
+            The linked from.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.PreviewUrl">
+            <summary>
+            Gets or sets the preview URL.
+            </summary>
+            <value>
+            The preview URL.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.TrackNumber">
+            <summary>
+            Gets or sets the track number.
+            </summary>
+            <value>
+            The track number.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackBase.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.TrackLink">
+            <summary>
+            The track link.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackLink.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackLink.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackLink.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackLink.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TrackLink.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Model.TracksLink">
+            <summary>
+            The tracks link.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TracksLink.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Model.TracksLink.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>
+            The total.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Options.FluentSpotifyClientOptions">
+            <summary>
+            The client options.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Options.FluentSpotifyClientOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Options.FluentSpotifyClientOptions"/> class.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Options.FluentSpotifyClientOptions.WebApiEndpoint">
+            <summary>
+            Gets or sets the Web API endpoint. Set to https://api.spotify.com/v1/ by default.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Options.FluentSpotifyClientOptions.Validate">
+            <summary>
+            Performs validation.
+            </summary>
+        </member>
+    </members>
+</doc>

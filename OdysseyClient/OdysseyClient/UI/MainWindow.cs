@@ -144,6 +144,7 @@ public partial class
 	protected void Play(object sender, EventArgs e)
 	{
         player.Play();
+        
 	}
 
 	protected void Stop(object sender, EventArgs e)
@@ -173,6 +174,7 @@ public partial class
                     new XElement("Artist", songByArtist)));
                 SocketClient.GetSocketClient().send(xml);
                 xml = SocketClient.GetSocketClient().Listen();
+                
                 byte[] song = Convert.FromBase64String(xml.Root.Element("Reply").Value);
                 MemoryStream memoryStream = new MemoryStream(song);
                 Mp3FileReader mp3FileReader = new Mp3FileReader(memoryStream);
@@ -212,8 +214,15 @@ public partial class
 
 	protected void NextPage(object sender, EventArgs e)
 	{
-        page++;
-       
+        
+       if(button24.Label == " ")
+        {
+
+        }
+        else
+        {
+            page++;
+        }
         XDocument xml = XMLGenerator.RequestSongs(page);
         UpdateSongs(xml);
         
