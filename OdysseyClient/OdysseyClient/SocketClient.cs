@@ -61,26 +61,26 @@ namespace OdysseyClient
         public XDocument Listen()
         {
             XDocument xml;
-			//socket.ReceiveBufferSize = 
-			//byte[] buffer = new byte[socket.ReceiveBufferSize];
-			//Console.Write(socket.ReceiveBufferSize);
+            //socket.ReceiveBufferSize = 
+            //byte[] buffer = new byte[socket.ReceiveBufferSize];
+            //Console.Write(socket.ReceiveBufferSize);
 
 
 
-			//socket.Receive(buffer);
-			//byte[] buffer2 = new byte[socket.ReceiveBufferSize];
-			//Console.Write(socket.ReceiveBufferSize);
+            //socket.Receive(buffer);
+            //byte[] buffer2 = new byte[socket.ReceiveBufferSize];
+            //Console.Write(socket.ReceiveBufferSize);
 
-			////byte[] realBuffer = new byte[socket.]
-			////for (int i = 0; i < buffer.Length; i++)
-			////{
-			////    if (buffer[i] == 0x00)
-			////    {
-			////        buffer[i] = Encoding.UTF8.GetBytes()
-			////    }
-			////}
-			////socket.Receive(buffer,buffer.Length,SocketFlags.None);
-			byte[] trash = new byte[socket.ReceiveBufferSize];
+            ////byte[] realBuffer = new byte[socket.]
+            ////for (int i = 0; i < buffer.Length; i++)
+            ////{
+            ////    if (buffer[i] == 0x00)
+            ////    {
+            ////        buffer[i] = Encoding.UTF8.GetBytes()
+            ////    }
+            ////}
+            ////socket.Receive(buffer,buffer.Length,SocketFlags.None);
+            byte[] trash = new byte[1];
             var buffer = new List<byte>();
             var currByte = new Byte[1];
             while (true)
@@ -104,7 +104,15 @@ namespace OdysseyClient
 					}
 				
 			}
-			socket.Receive(trash);
+            while (socket.Available != 0)
+            {
+
+                socket.Receive(trash);
+                
+            }
+            //trash = new byte[trash.Length];
+            //socket.Receive(trash); 
+            
             ////Console.Write(sb);
 
             string sb = System.Text.Encoding.UTF8.GetString(buffer.ToArray());

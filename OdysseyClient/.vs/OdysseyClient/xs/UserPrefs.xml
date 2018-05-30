@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{AA08A8DD-CD55-4D74-B026-36269906456C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/gtk-gui/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OdysseyClient/UI/AddSongUI.cs">
     <Files>
       <File FileName="OdysseyClient/gtk-gui/OdysseyClient.Login.cs" Line="1" Column="1" />
       <File FileName="OdysseyClient/gtk-gui/OdysseyClient.RegisterWindow.cs" Line="1" Column="1" />
-      <File FileName="OdysseyClient/XMLGenerator.cs" Line="45" Column="81" />
+      <File FileName="OdysseyClient/XMLGenerator.cs" Line="45" Column="29" />
       <File FileName="OdysseyClient/UI/Login.cs" Line="86" Column="7" />
       <File FileName="OdysseyClient/Program.cs" Line="13" Column="48" />
       <File FileName="OdysseyClient/SocketClient.cs" Line="107" Column="26" />
@@ -11,6 +11,7 @@
       <File FileName="OdysseyClient/AlertWindow.cs" Line="8" Column="20" />
       <File FileName="OdysseyClient/UI/MainWindow.cs" Line="90" Column="13" />
       <File FileName="OdysseyClient/gtk-gui/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="OdysseyClient/UI/AddSongUI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

@@ -220,7 +220,7 @@ Albúm</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="OdysseyClient.AddSongUI" design-size="400 300">
+  <widget class="Gtk.Window" id="OdysseyClient.AddSongUI" design-size="758 543">
     <property name="MemberName" />
     <property name="Title" translatable="yes">AddSongUI</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -238,7 +238,7 @@ Albúm</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry1">
+          <widget class="Gtk.Entry" id="artist">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Text" translatable="yes">Artista</property>
@@ -246,8 +246,87 @@ Albúm</property>
             <property name="InvisibleChar">●</property>
           </widget>
           <packing>
-            <property name="X">78</property>
-            <property name="Y">46</property>
+            <property name="X">70</property>
+            <property name="Y">75</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="year">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">Año</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">70</property>
+            <property name="Y">175</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="style">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">Genero</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">70</property>
+            <property name="Y">225</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="lyrics">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">Letra</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">70</property>
+            <property name="Y">275</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="album">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">Album</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">70</property>
+            <property name="Y">125</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Agregar Cancion</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="AddSong" />
+          </widget>
+          <packing>
+            <property name="X">527</property>
+            <property name="Y">475</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="nameSong">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">Nombre Cancion</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">70</property>
+            <property name="Y">25</property>
           </packing>
         </child>
       </widget>

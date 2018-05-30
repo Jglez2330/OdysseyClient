@@ -16,6 +16,7 @@ public partial class
     MainWindow : Gtk.Window
    {
     public WaveOut player;
+    public bool playing = false;
 	private static MainWindow mainWindow;
 
 	public static MainWindow GetMainWindow(){
@@ -32,6 +33,33 @@ public partial class
     {
         this.player = new WaveOut();
         Build();
+
+        XDocument xml = XMLGenerator.RequestSongs(1);
+        int i = 0;
+        Button[] arrayButtons = { button21, button22, button23, button24 };
+        button21.Label = " ";
+        button22.Label = " ";
+        button23.Label = " ";
+        button24.Label = " ";
+
+        foreach (XElement x in xml.Root.Elements())
+        {
+            //button21.Label = x.Element("SongName").Value;
+            foreach ( XElement y in x.Elements())
+            {
+                if (y.Name == "SongName")
+                {
+                    arrayButtons[i].Label = y.Value;
+                    
+                }else if(y.Name == "ArtistName")
+                {
+                    arrayButtons[i].Label +=" by " + y.Value;
+                }
+            }
+                i++;
+
+
+        }
     }
 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
@@ -51,7 +79,7 @@ public partial class
         FileFilter file = new FileFilter();
         file.AddPattern("*.mp3");
         //file.AddPattern("*.mp4");
-        file.AddPattern("*.wav");
+        //file.AddPattern("*.wav");
 
         fileChooser.AddFilter(file);
         //fileChooser.Show();
@@ -121,10 +149,10 @@ public partial class
 
 	protected void GetSongs(object sender, EventArgs e)
 	{
-		SocketClient.GetSocketClient().send(XMLGenerator.Generate("None", "None", 2));
+		SocketClient.GetSocketClient().send(XMLGenerator.Generate("None", "None"," "," "," "," ",2));
 		XDocument xml = SocketClient.GetSocketClient().Listen();
-        Console.Write(xml.Root.Element("SongData").Value.ToString());//.Element("SongString")
-        string sb = xml.Root.Element("SongData").Value;
+        Console.Write(xml.Root.Element("SongData").Element("SongString").Value.ToString());//.Element("SongString")
+        string sb = xml.Root.Element("SongData").Element("SongString").Value;
 
 
 
@@ -163,18 +191,56 @@ public partial class
 
 	protected void Play(object sender, EventArgs e)
 	{
+        player.Play();
 	}
 
 	protected void Stop(object sender, EventArgs e)
 	{
+        player.Pause();
+        Console.Write("Pausa");
 	}
 
-	protected void PlaySelectedSong(object sender, EventArgs e)
-	{
-	}
+	
 
-	protected void PlaySeletedSong(object sender, EventArgs e)
-	{
+    protected void PlaySeletedSong(object sender, EventArgs e)
+    {
+        try
+        {
+            Gtk.Button button = (Button)sender;
+            string songRequested = "";
+            string songByArtist = "";
+            char separator = " ".ToCharArray()[0];
+            songRequested = button.Label.Split(separator)[0];
+            songByArtist = button.Label.Split(separator)[2];
+
+            XDocument xml = new XDocument(new XElement("Data",
+                new XElement("opCode", 30),
+                new XElement("Song", songRequested),
+                new XElement("Artist", songByArtist)));
+            SocketClient.GetSocketClient().send(xml);
+            xml = SocketClient.GetSocketClient().Listen();
+            byte[] song = Convert.FromBase64String(xml.Root.Element("Reply").Value);
+            MemoryStream memoryStream = new MemoryStream(song);
+            Mp3FileReader mp3FileReader = new Mp3FileReader(memoryStream);
+            try
+            {
+                player.Dispose();
+                player = new WaveOut();
+            }catch (Exception)
+            {
+
+            }
+            player.Init(mp3FileReader);
+            player.Play();
+            
+
+
+        }catch(Exception)
+        {
+
+        }
+        //button.Name;
+
 	}
 
 	protected void PreviousPage(object sender, EventArgs e)
