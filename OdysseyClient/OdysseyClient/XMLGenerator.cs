@@ -32,8 +32,20 @@ namespace OdysseyClient
 
 
 		}
-        
-		internal static XDocument Generate(string user, string passwordString, string style, string fullName, string age, string friends,int operationCode)
+
+        internal static XDocument RequestSongs(int pageNumber)
+        {
+            XDocument document = new XDocument(new XElement("Data",
+                new XElement("opCode", 2),
+                new XElement("Index", pageNumber)));
+
+            SocketClient.GetSocketClient().send(document);
+            document = SocketClient.GetSocketClient().Listen();
+
+            return document;
+        }
+
+        internal static XDocument Generate(string user, string passwordString, string style, string fullName, string age, string friends,int operationCode)
         {
 			XDocument xml = new XDocument(new XElement("Data",
                                                               new XElement("opCode", operationCode),

@@ -25,7 +25,7 @@ namespace OdysseyClient
             {
                 sb.Append(password[i].ToString("X2"));
             }
-			XDocument xml = XMLGenerator.Generate(entry4.Text, sb.ToString(),20);
+			XDocument xml = XMLGenerator.Generate(entry4.Text, sb.ToString()," "," "," "," ",20);
 			SocketClient socketClient = SocketClient.GetSocketClient();
 			socketClient.send(xml);
 			XDocument reply = socketClient.Listen();
@@ -60,30 +60,31 @@ namespace OdysseyClient
 
 		protected void Register(object sender, EventArgs e)
 		{
-			//MD5 encryptor = MD5.Create();
-			//         byte[] password = System.Text.Encoding.UTF8.GetBytes(entry5.Text);
-			//         password = encryptor.ComputeHash(password);
-			//System.Text.StringBuilder sb = new System.Text.StringBuilder();
-			//for (int i = 0; i < password.Length; i++)
-			//         {
-			//	sb.Append(password[i].ToString("X2"));
-			//         }
-			//XDocument xml = XMLGenerator.Generate(entry4.Text,sb.ToString(), 21);
-			//SocketClient.GetSocketClient().send(xml);
-			//XDocument reply = SocketClient.GetSocketClient().Listen();
-			//Console.Write(reply);
-			//if (reply.Root.Element("Reply").Value == "Granted")
-			//{
-			//    Destroy();
-			//    ViewManager viewmanager = new ViewManager();
-			//}
-			//else
-			//{
-			//    AlertWindow alertWindow = new AlertWindow("Error: Nombre de Usuario ya se encunetra en uso, Por favor reintentar");
-			//    alertWindow.Show();
+            //MD5 encryptor = MD5.Create();
+            //         byte[] password = System.Text.Encoding.UTF8.GetBytes(entry5.Text);
+            //         password = encryptor.ComputeHash(password);
+            //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            //for (int i = 0; i < password.Length; i++)
+            //         {
+            //	sb.Append(password[i].ToString("X2"));
+            //         }
+            //XDocument xml = XMLGenerator.Generate(entry4.Text,sb.ToString(), 21);
+            //SocketClient.GetSocketClient().send(xml);
+            //XDocument reply = SocketClient.GetSocketClient().Listen();
+            //Console.Write(reply);
+            //if (reply.Root.Element("Reply").Value == "Granted")
+            //{
+            //    Destroy();
+            //    ViewManager viewmanager = new ViewManager();
+            //}
+            //else
+            //{
+            //    AlertWindow alertWindow = new AlertWindow("Error: Nombre de Usuario ya se encunetra en uso, Por favor reintentar");
+            //    alertWindow.Show();
 
 
-			//}
+            //}
+            Destroy();
 			RegisterWindow registerWindow = new RegisterWindow();
              
 				

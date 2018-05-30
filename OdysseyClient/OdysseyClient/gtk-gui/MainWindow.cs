@@ -202,12 +202,15 @@ public partial class MainWindow
 		this.DefaultHeight = 575;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
-		this.combobox1.Changed += new global::System.EventHandler(this.SendSort);
+        //this.combobox1.Changed += new global::System.EventHandler(this.SendSort);
+        this.entry2.Activated += new global::System.EventHandler(this.SendSort);
 		this.button2.Clicked += new global::System.EventHandler(this.OnAgregarCancion);
 		this.button5.Clicked += new global::System.EventHandler(this.GetSongs);
 		this.button1.Clicked += new global::System.EventHandler(this.Play);
-		this.button2.Clicked += new global::System.EventHandler(this.Stop);
-        
+		this.button3.Clicked += new global::System.EventHandler(this.Stop);
+        this.button21.Clicked += new global::System.EventHandler(this.PlaySeletedSong);
 
-	}
+
+
+    }
 }

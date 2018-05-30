@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Xml.Linq;
 namespace OdysseyClient
 {
@@ -31,7 +32,15 @@ namespace OdysseyClient
 
 		protected void Register(object sender, System.EventArgs e)
 		{
-			SocketClient.GetSocketClient().send(XMLGenerator.Generate(entry1.Text, entry4.Text, comboboxentry1.ActiveText, entry2.Text, entry3.Text, label2.Text.Substring(0,label2.Text.Length-1), 21));
+            MD5 encryptor = MD5.Create();
+                     byte[] password = System.Text.Encoding.UTF8.GetBytes(entry4.Text);
+                     password = encryptor.ComputeHash(password);
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            for (int i = 0; i < password.Length; i++)
+            {
+                sb.Append(password[i].ToString("X2"));
+            }
+            SocketClient.GetSocketClient().send(XMLGenerator.Generate(entry1.Text, sb.ToString(), comboboxentry1.ActiveText, entry2.Text, entry3.Text, label2.Text.Substring(0,label2.Text.Length-1), 21));
 			XDocument xml = SocketClient.GetSocketClient().Listen();
 			if (xml.Root.Element("Reply").Value == "Granted")
             {
