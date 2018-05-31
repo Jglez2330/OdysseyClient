@@ -5,7 +5,7 @@ using System;
 using System.Net.Sockets;
 using System.Collections.Generic;
 using System.Threading;
-using Zirpl.Spotify.MetadataApi;
+//using Zirpl.Spotify.MetadataApi;
 
 namespace OdysseyClient
 {
@@ -23,7 +23,6 @@ namespace OdysseyClient
             try
             {
 
-                SpotifyMetadataApiClient client = new SpotifyMetadataApiClient();
                 
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(ip);//Dns.GetHostName());  
                 IPAddress ipAddress = ipHostInfo.AddressList[0];

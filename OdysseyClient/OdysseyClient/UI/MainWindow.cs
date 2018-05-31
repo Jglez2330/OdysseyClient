@@ -80,7 +80,7 @@ public partial class
 
         }
         Pagina.Text = "";
-        Pagina.Text += page / 4;
+        Pagina.Text += (page / 4 + 1);
 
     }
 
@@ -143,14 +143,26 @@ public partial class
 
 	protected void Play(object sender, EventArgs e)
 	{
-        player.Play();
-        
+        try
+        {
+
+
+            player.Play();
+        }catch(Exception)
+        {
+
+        }
 	}
 
 	protected void Stop(object sender, EventArgs e)
 	{
-        player.Pause();
-        Console.Write("Pausa");
+        try
+        {
+            player.Pause();
+        }catch(Exception)
+        {
+
+        }
 	}
 
 	
@@ -178,6 +190,7 @@ public partial class
                 byte[] song = Convert.FromBase64String(xml.Root.Element("Reply").Value);
                 MemoryStream memoryStream = new MemoryStream(song);
                 Mp3FileReader mp3FileReader = new Mp3FileReader(memoryStream);
+                //mp3FileReader.
                 try
                 {
                     player.Dispose();
@@ -209,6 +222,7 @@ public partial class
         }
         XDocument xml = XMLGenerator.RequestSongs(page);
         UpdateSongs(xml);
+        Pagina.Text = "" + (page + 1); 
        
     }
 
@@ -225,6 +239,54 @@ public partial class
         }
         XDocument xml = XMLGenerator.RequestSongs(page);
         UpdateSongs(xml);
-        
+        Pagina.Text = "" + (page + 1);
+
+    }
+    private void Delete(object sender, EventArgs e)
+    {
+        try
+        {
+            Button button = (Button)sender;
+            string name = "";
+            string artist = "";
+            char separator = " ".ToCharArray()[0];
+            string buttonLabel = "";
+
+            if (button.Name == "1")
+            {
+                buttonLabel = button21.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+
+            }
+            else if (button.Name == "2")
+            {
+                buttonLabel = button22.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            else if (button.Name == "3")
+            {
+                buttonLabel = button23.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            else if (button.Name == "4")
+            {
+                buttonLabel = button24.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            XDocument document = new XDocument(new XElement("Data",
+                new XElement("opCode", 24),
+                new XElement("SongName", name),
+                new XElement("Artist", artist)));
+            SocketClient.GetSocketClient().send(document);
+            document = XMLGenerator.RequestSongs(page);
+            UpdateSongs(document);
+        }catch(Exception)
+        {
+            AlertWindow alertWindow = new AlertWindow("Error: No se pudo eliminar el elemento o este no existe, por favor reintentar");
+        }
     }
 }

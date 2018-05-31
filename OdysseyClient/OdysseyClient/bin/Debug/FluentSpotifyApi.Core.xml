@@ -1,0 +1,1032 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FluentSpotifyApi.Core</name>
+    </assembly>
+    <members>
+        <member name="T:FluentSpotifyApi.Core.Client.HttpClientWrapper">
+            <summary>
+            Wraps <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Client.IHttpClientWrapper" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpClientWrapper.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Client.HttpClientWrapper"/> class.
+            </summary>
+            <param name="httpClient">The HTTP client.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpClientWrapper.SendAsync``1(FluentSpotifyApi.Core.Client.HttpRequest{``0},System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="httpRequest">The HTTP request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.HttpRequest`1">
+            <summary>
+            The class that represents an HTTP Request.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpRequest`1.UriFromValuesBuilder">
+            <summary>
+            Gets the URI from values builder.
+            </summary>
+            <value>
+            The URI from values builder.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpRequest`1.HttpMethod">
+            <summary>
+            Gets the HTTP method.
+            </summary>
+            <value>
+            The HTTP method.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpRequest`1.RequestHeaders">
+            <summary>
+            Gets the request headers.
+            </summary>
+            <value>
+            The request headers.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpRequest`1.RequestContentProvider">
+            <summary>
+            Gets the request content provider.
+            </summary>
+            <value>
+            The request content provider.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpRequest`1.ResponseProcessor">
+            <summary>
+            Gets the response processor.
+            </summary>
+            <value>
+            The response processor.
+            </value>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpRequest`1.ReplaceUriFromValuesBuilder(System.Func{FluentSpotifyApi.Core.Client.IUriFromValuesBuilder,FluentSpotifyApi.Core.Client.IUriFromValuesBuilder})">
+            <summary>
+            Replaces the URI from values builder.
+            </summary>
+            <param name="valueProvider">The value provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpRequest`1.ReplaceHttpMethod(System.Func{System.Net.Http.HttpMethod,System.Net.Http.HttpMethod})">
+            <summary>
+            Replaces the HTTP method.
+            </summary>
+            <param name="valueProvider">The value provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpRequest`1.ReplaceRequestHeaders(System.Func{System.Collections.Generic.IReadOnlyCollection{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.IReadOnlyCollection{System.Collections.Generic.KeyValuePair{System.String,System.String}}})">
+            <summary>
+            Replaces the request headers.
+            </summary>
+            <param name="valueProvider">The value provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpRequest`1.ReplaceRequestContentProvider(System.Func{System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Net.Http.HttpContent}},System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Net.Http.HttpContent}}})">
+            <summary>
+            Replaces the request content provider.
+            </summary>
+            <param name="valueProvider">The value provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.HttpRequest`1.ReplaceResponseProcessor(System.Func{System.Func{System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task{`0}},System.Func{System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken,System.Threading.Tasks.Task{`0}}})">
+            <summary>
+            Replaces the response processor.
+            </summary>
+            <param name="valueProvider">The value provider.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.HttpStatusCodeToExceptionAttribute">
+            <summary>
+            This attribute instructs HTTP response processor to throw the exception of <see cref="P:FluentSpotifyApi.Core.Client.HttpStatusCodeToExceptionAttribute.ExceptionType"/> type 
+            when <see cref="P:System.Net.Http.HttpResponseMessage.StatusCode"/> matches <see cref="P:FluentSpotifyApi.Core.Client.HttpStatusCodeToExceptionAttribute.StatusCode"/>. 
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpStatusCodeToExceptionAttribute.StatusCode">
+            <summary>
+            Gets or sets the status code.
+            </summary>
+            <value>
+            The status code.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.HttpStatusCodeToExceptionAttribute.ExceptionType">
+            <summary>
+            Gets or sets the type of the exception.
+            </summary>
+            <value>
+            The type of the exception.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.IHttpClientWrapper">
+            <summary>
+            Wraps <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.IHttpClientWrapper.SendAsync``1(FluentSpotifyApi.Core.Client.HttpRequest{``0},System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="httpRequest">The HTTP request.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.IPipeline">
+            <summary>
+            The client execution pipeline.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.IPipeline.Add(FluentSpotifyApi.Core.Client.IPipelineItem)">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.IPipelineItem">
+            <summary>
+            The pipeline item.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.IPipelineItem.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.IServiceProvider,FluentSpotifyApi.Core.Client.IHttpClientWrapper})">
+            <summary>
+            Configures the specified services.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="currentHttpClientWrapperFactory">The current HTTP client wrapper factory.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.ITypedHttpClient">
+            <summary>
+            Strongly typed HTTP client.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.ITypedHttpClient.SendAsync``1(FluentSpotifyApi.Core.Client.UriParts,System.Net.Http.HttpMethod,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server and deserializes response to an instance of <typeparamref name="TResult" /> using JSON serializer.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="uriParts">The URI parts.</param>
+            <param name="httpMethod">The HTTP method.</param>
+            <param name="requestHeaders">The request headers.</param>
+            <param name="requestBodyParameters">The request body parameters.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.ITypedHttpClient.SendWithJsonBodyAsync``2(FluentSpotifyApi.Core.Client.UriParts,System.Net.Http.HttpMethod,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},``1,System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server and deserializes response to an instance of <typeparamref name="TResult" /> using JSON serializer.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TRequestBody">The type of the JSON serializable request body.</typeparam>
+            <param name="uriParts">The URI parts.</param>
+            <param name="httpMethod">The HTTP method.</param>
+            <param name="requestHeaders">The request headers.</param>
+            <param name="requestBody">The JSON serializable request body.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.ITypedHttpClient.SendWithStreamBodyAsync``1(FluentSpotifyApi.Core.Client.UriParts,System.Net.Http.HttpMethod,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.IO.Stream}},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server and deserializes response to an instance of <typeparamref name="TResult" /> using JSON serializer.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="uriParts">The URI parts.</param>
+            <param name="httpMethod">The HTTP method.</param>
+            <param name="requestHeaders">The request headers.</param>
+            <param name="streamProvider">The stream provider.</param>
+            <param name="streamContentType">The stream content type.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.IUriFromValuesBuilder">
+            <summary>
+            The URI from values builder.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.IUriFromValuesBuilder.AddValue``1(``0)">
+            <summary>
+            Adds the value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.IUriFromValuesBuilder.Build">
+            <summary>
+            Builds URI using values provided by <see cref="M:FluentSpotifyApi.Core.Client.IUriFromValuesBuilder.AddValue``1(``0)"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.TypedHttpClient">
+            <summary>
+            Strongly typed HTTP client.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Client.ITypedHttpClient" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.TypedHttpClient.#ctor(FluentSpotifyApi.Core.Client.IHttpClientWrapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Client.TypedHttpClient"/> class.
+            </summary>
+            <param name="httpClientWrapper">The HTTP client wrapper.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.TypedHttpClient.SendAsync``1(FluentSpotifyApi.Core.Client.UriParts,System.Net.Http.HttpMethod,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server and deserializes response to an instance of <typeparamref name="TResult" /> using JSON serializer.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="uriParts">The URI parts.</param>
+            <param name="httpMethod">The HTTP method.</param>
+            <param name="requestHeaders">The request headers.</param>
+            <param name="requestBodyParameters">The request body parameters.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.TypedHttpClient.SendWithJsonBodyAsync``2(FluentSpotifyApi.Core.Client.UriParts,System.Net.Http.HttpMethod,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},``1,System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server and deserializes response to an instance of <typeparamref name="TResult" /> using JSON serializer.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TRequestBody">The type of the JSON serializable request body.</typeparam>
+            <param name="uriParts">The URI parts.</param>
+            <param name="httpMethod">The HTTP method.</param>
+            <param name="requestHeaders">The request headers.</param>
+            <param name="requestBody">The JSON serializable request body.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Client.TypedHttpClient.SendWithStreamBodyAsync``1(FluentSpotifyApi.Core.Client.UriParts,System.Net.Http.HttpMethod,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.IO.Stream}},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends request to the server and deserializes response to an instance of <typeparamref name="TResult" /> using JSON serializer.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="uriParts">The URI parts.</param>
+            <param name="httpMethod">The HTTP method.</param>
+            <param name="requestHeaders">The request headers.</param>
+            <param name="streamProvider">The stream provider.</param>
+            <param name="streamContentType">The stream content type.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Client.UriParts">
+            <summary>
+            The URI parts.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.UriParts.BaseUri">
+            <summary>
+            The base URI.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.UriParts.QueryStringParameters">
+            <summary>
+            The query string parameters represented as an object.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Client.UriParts.RouteValues">
+            <summary>
+            The route values represented as a sequence of objects.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestCanceledException">
+            <summary>
+            The exception that is thrown when the <see cref="T:System.OperationCanceledException"/> is thrown by 
+            <see cref="M:System.Net.Http.HttpClient.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)"/> 
+            or during processing of the response stream when specified <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> is <c>false</c>. 
+            This usually means that <see cref="P:System.Net.Http.HttpClient.Timeout"/> has exceeded.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestException" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestCanceledException.#ctor(System.OperationCanceledException)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestCanceledException" /> class.
+            </summary>
+            <param name="operationCanceledException">The operation canceled exception.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestException">
+            <summary>
+            The exception that shields any exception thrown by <see cref="M:System.Net.Http.HttpClient.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)"/> 
+            or during processing of the response stream. The inner exception always contains the original exception.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpRequestException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseHeaders">
+            <summary>
+            Spotify HTTP Response headers.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseHeaders.#ctor(System.Net.Http.Headers.HttpResponseHeaders)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseHeaders"/> class.
+            </summary>
+            <param name="httpResponseHeaders">The HTTP response headers.</param>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseHeaders.RetryAfter">
+            <summary>
+            Gets the retry after.
+            </summary>
+            <value>
+            The retry after.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithAuthenticationErrorException">
+            <summary>
+            The exception that is thrown when a response with error <see cref="T:System.Net.HttpStatusCode"/> and payload of type <see cref="T:FluentSpotifyApi.Core.Model.AuthenticationError"/> is returned from the Spotify service. 
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithAuthenticationErrorException.#ctor(System.Net.HttpStatusCode,System.Net.Http.Headers.HttpResponseHeaders,System.String,FluentSpotifyApi.Core.Model.AuthenticationError)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithAuthenticationErrorException" /> class.
+            </summary>
+            <param name="errorCode">The error status code.</param>
+            <param name="httpResponseHeaders">The reponse headers</param>
+            <param name="content">The content.</param>
+            <param name="payload">The payload.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException">
+            <summary>
+            The exception that is thrown when a response with error <see cref="T:System.Net.HttpStatusCode"/> is returned from the Spotify service. 
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException.#ctor(System.Net.HttpStatusCode,System.Net.Http.Headers.HttpResponseHeaders,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException" /> class.
+            </summary>
+            <param name="errorCode">The error status code.</param>
+            <param name="httpResponseHeaders">The HTTP response headers.</param>
+            <param name="content">The content.</param>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException.ErrorCode">
+            <summary>
+            Gets the status code.
+            </summary>
+            <value>
+            The status code.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>
+            The headers.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithPayloadException`1">
+            <summary>
+            The exception that is thrown when a response with error <see cref="T:System.Net.HttpStatusCode"/> and payload of type <typeparamref name="TPayload"/> is returned from the Spotify service. 
+            </summary>
+            <typeparam name="TPayload">The type of the payload.</typeparam>
+            <seealso cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithPayloadException`1.#ctor(System.Net.HttpStatusCode,System.Net.Http.Headers.HttpResponseHeaders,System.String,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithPayloadException`1" /> class.
+            </summary>
+            <param name="errorCode">The error status code.</param>
+            <param name="httpResponseHeaders">The HTTP response headers.</param>
+            <param name="content">The content.</param>
+            <param name="payload">The payload.</param>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithPayloadException`1.Payload">
+            <summary>
+            Gets the payload.
+            </summary>
+            <value>
+            The payload.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithRegularErrorException">
+            <summary>
+            The exception that is thrown when a response with error <see cref="T:System.Net.HttpStatusCode"/> and payload of type <see cref="T:FluentSpotifyApi.Core.Model.RegularError"/> is returned from the Spotify service. 
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithRegularErrorException.#ctor(System.Net.HttpStatusCode,System.Net.Http.Headers.HttpResponseHeaders,System.String,FluentSpotifyApi.Core.Model.RegularError)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithRegularErrorException" /> class.
+            </summary>
+            <param name="errorCode">The error status code.</param>
+            <param name="httpResponseHeaders">The HTTP response headers.</param>
+            <param name="content">The content.</param>
+            <param name="payload">The payload.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException">
+            <summary>
+            The exception that is thrown when a communication error with the Spotify service occurs.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException"/> class.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyServiceException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.
+            </param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Extensions.PipelineExtensions">
+            <summary>
+            The set of <see cref="T:FluentSpotifyApi.Core.Client.IPipeline"/> extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Extensions.PipelineExtensions.AddDelegate(FluentSpotifyApi.Core.Client.IPipeline,System.Func{System.Func{FluentSpotifyApi.Core.Client.HttpRequest{System.Object},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Object}},FluentSpotifyApi.Core.Client.HttpRequest{System.Object},System.Type,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Object}})">
+            <summary>
+            Adds a delegate to the client execution chain. 
+            The parameter of HttpRequest type can be used to inspect and modify HTTP request. 
+            The <see cref="T:System.Type"/> parameter contains the type of the HTTP request result.
+            </summary>
+            <param name="pipeline">The pipeline.</param>
+            <param name="func">The delegate that will be executed during client call.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Extensions.PipelineExtensions.AddDelegate(FluentSpotifyApi.Core.Client.IPipeline,System.Func{System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Object}},System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Object}})">
+            <summary>
+            Adds a delegate to the client execution chain.
+            </summary>
+            <param name="pipeline">The pipeline.</param>
+            <param name="func">The delegate that will be executed during client call.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Extensions.SpotifyHttpResponseWithErrorCodeExceptionExtensions">
+            <summary>
+            The set of <see cref="T:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException"/> exceptions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Extensions.SpotifyHttpResponseWithErrorCodeExceptionExtensions.IsRecoverable(FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException)">
+            <summary>
+            Determines whether the <see cref="P:FluentSpotifyApi.Core.Exceptions.SpotifyHttpResponseWithErrorCodeException.ErrorCode"/> is one of the following:
+            <see cref="F:System.Net.HttpStatusCode.RequestTimeout"/>
+            <see cref="F:System.Net.HttpStatusCode.InternalServerError"/>
+            <see cref="F:System.Net.HttpStatusCode.BadGateway"/>
+            <see cref="F:System.Net.HttpStatusCode.ServiceUnavailable"/>
+            <see cref="F:System.Net.HttpStatusCode.GatewayTimeout"/>
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>
+              <c>true</c> if the specified exception is recoverable; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Extensions.EnumerableExtensions">
+            <summary>
+            Set of <see cref="T:System.Collections.Generic.IEnumerable`1"/> extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.EnumerableExtensions.EmptyIfNull``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Empties if null.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">The enumerable.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.EnumerableExtensions.GetQueryString(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Gets the query string.
+            </summary>
+            <param name="enumerable">The enumerable.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Extensions.EnumExtensions">
+            <summary>
+            Set of <see cref="T:System.Enum"/> extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.EnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            Gets the description.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.EnumExtensions.GetValues``1">
+            <summary>
+            Gets the values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Extensions.Extensions">
+            <summary>
+            Set of generic extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.Extensions.Yield``1(``0)">
+            <summary>
+            Yields the specified item.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.Extensions.CloneUsingJsonSerializer``1(``0)">
+            <summary>
+            Clones the specified source using JSON serializer.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Extensions.ObjectExtensions">
+            <summary>
+            The set of <see cref="T:System.Object"/> extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ObjectExtensions.ToUrlString(System.Object)">
+            <summary>
+            Converts specified value to URL escaped string.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ObjectExtensions.ToInvariantString(System.Object)">
+            <summary>
+            Converts specified value to invariant string.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Extensions.SemaphoreSlimExtensions">
+            <summary>
+            The set of <see cref="T:System.Threading.SemaphoreSlim"/> extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.SemaphoreSlimExtensions.ExecuteAsync(System.Threading.SemaphoreSlim,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+            <summary>
+            Executes asynchronous action inside semaphore.
+            </summary>
+            <param name="semaphore">The semaphore.</param>
+            <param name="func">The function.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.SemaphoreSlimExtensions.ExecuteAsync``1(System.Threading.SemaphoreSlim,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Executes asynchronous function inside semaphore.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="semaphore">The semaphore.</param>
+            <param name="func">The function.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Set of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> extensions.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ServiceCollectionExtensions.RegisterSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the singleton.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="services">The services.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the provided <see cref="P:Microsoft.Extensions.DependencyInjection.ServiceDescriptor.ServiceType"/> is already present in the <paramref name="services"/>.
+            </exception>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ServiceCollectionExtensions.RegisterSingleton``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the singleton.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <typeparam name="TImplementation">The type of the implementation.</typeparam>
+            <param name="services">The services.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the provided <see cref="P:Microsoft.Extensions.DependencyInjection.ServiceDescriptor.ServiceType"/> is already present in the <paramref name="services"/>.
+            </exception>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ServiceCollectionExtensions.RegisterSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,``0)">
+            <summary>
+            Registers the singleton.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="services">The services.</param>
+            <param name="implementationInstance">The implementation instance.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the provided <see cref="P:Microsoft.Extensions.DependencyInjection.ServiceDescriptor.ServiceType"/> is already present in the <paramref name="services"/>.
+            </exception>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ServiceCollectionExtensions.RegisterSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.IServiceProvider,``0})">
+            <summary>
+            Registers the singleton.
+            </summary>
+            <typeparam name="TService">The type of the service.</typeparam>
+            <param name="services">The services.</param>
+            <param name="implementationFactory">The implementation factory.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the provided <see cref="P:Microsoft.Extensions.DependencyInjection.ServiceDescriptor.ServiceType"/> is already present in the <paramref name="services"/>.
+            </exception>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Extensions.ServiceCollectionExtensions.Register(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceDescriptor)">
+            <summary>
+            Registers the specified service descriptor.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="serviceDescriptor">The service descriptor.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the provided <see cref="P:Microsoft.Extensions.DependencyInjection.ServiceDescriptor.ServiceType"/> is already present in the <paramref name="services"/>.
+            </exception>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.ITransformer">
+            <summary>
+            A weakly typed transformer interface.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Internal.ITransformer.SourceType">
+            <summary>
+            Gets the type of the source.
+            </summary>
+            <value>
+            The type of the source.
+            </value>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.ITransformer.Transform(System.Object)">
+            <summary>
+            Transforms the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.IWrapper`1">
+            <summary>
+            The wrapper used for internal registrations in <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Internal.IWrapper`1.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.SpotifyObjectHelpers">
+            <summary>
+            The set of object helpers intended for internal use only.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.SpotifyObjectHelpers.GetPropertyBag(System.Object)">
+            <summary>
+            Gets the property bag for the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Transformer`1">
+            <summary>
+            A strongly typed transformer implementation.
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <seealso cref="T:FluentSpotifyApi.Core.Internal.ITransformer" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Transformer`1.#ctor(System.Func{`0,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Internal.Transformer`1"/> class.
+            </summary>
+            <param name="transformer">The transformer.</param>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Internal.Transformer`1.SourceType">
+            <summary>
+            Gets the type of the source.
+            </summary>
+            <value>
+            The type of the source.
+            </value>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Transformer`1.Transform(System.Object)">
+            <summary>
+            Transforms the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Internal.Wrapper`1">
+            <summary>
+            The wrapper used for internal registrations in <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:FluentSpotifyApi.Core.Internal.IWrapper`1" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Wrapper`1.#ctor(`0,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Internal.Wrapper`1" /> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="isOwned">if set to <c>true</c> the <paramref name="value"/> will be disposed.</param>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Internal.Wrapper`1.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Internal.Wrapper`1.IsOwned">
+            <summary>
+            Determines whether the wrapped value will be disposed.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Internal.Wrapper`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.AuthenticationError">
+            <summary>
+            The authentication error.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.AuthenticationError.Error">
+            <summary>
+            Gets or sets the error.
+            </summary>
+            <value>
+            The error.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.AuthenticationError.ErrorDescription">
+            <summary>
+            Gets or sets the error description.
+            </summary>
+            <value>
+            The error description.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.Followers">
+            <summary>
+            The followers.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.Followers.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.Followers.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>
+            The total.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.Image">
+            <summary>
+            The image.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.Image.Height">
+            <summary>
+            Gets or sets the height.
+            </summary>
+            <value>
+            The height.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.Image.Url">
+            <summary>
+            Gets or sets the URL.
+            </summary>
+            <value>
+            The URL.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.Image.Width">
+            <summary>
+            Gets or sets the width.
+            </summary>
+            <value>
+            The width.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.IUser">
+            <summary>
+            Represents user.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.IUser.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.PrivateUser">
+            <summary>
+            The private user.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Model.UserBase" />
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.PrivateUser.BirthDate">
+            <summary>
+            Gets or sets the birth date.
+            </summary>
+            <value>
+            The birth date.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.PrivateUser.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>
+            The country.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.PrivateUser.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.PrivateUser.Product">
+            <summary>
+            Gets or sets the product.
+            </summary>
+            <value>
+            The product.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.RegularError">
+            <summary>
+            The regular error payload.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.RegularError.Status">
+            <summary>
+            Gets or sets the status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.RegularError.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.UserBase">
+            <summary>
+            The base class for users.
+            </summary>
+            <seealso cref="T:FluentSpotifyApi.Core.Model.IUser" />
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.DisplayName">
+            <summary>
+            Gets or sets the display name.
+            </summary>
+            <value>
+            The display name.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.ExternalUrls">
+            <summary>
+            Gets or sets the external urls.
+            </summary>
+            <value>
+            The external urls.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.Followers">
+            <summary>
+            Gets or sets the followers.
+            </summary>
+            <value>
+            The followers.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.Href">
+            <summary>
+            Gets or sets the href.
+            </summary>
+            <value>
+            The href.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.Images">
+            <summary>
+            Gets or sets the images.
+            </summary>
+            <value>
+            The images.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.UserBase.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Model.Wrappers.RegularErrorMessage">
+            <summary>
+            The regular error message.
+            </summary>
+        </member>
+        <member name="P:FluentSpotifyApi.Core.Model.Wrappers.RegularErrorMessage.Error">
+            <summary>
+            Gets or sets the error.
+            </summary>
+            <value>
+            The error.
+            </value>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Options.IOptionsProvider`1">
+            <summary>
+            The options provider interface.
+            </summary>
+            <typeparam name="TOptions"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Options.IOptionsProvider`1.Get">
+            <summary>
+            Gets the current options.
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Options.IValidatable">
+            <summary>
+            Represents something that is validatable.
+            </summary>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Options.IValidatable.Validate">
+            <summary>
+            Performs validation. 
+            </summary>
+        </member>
+        <member name="T:FluentSpotifyApi.Core.Options.OptionsProvider`1">
+            <summary>
+            The options provider implementation using <see cref="T:Microsoft.Extensions.Options.IOptions`1"/>.
+            </summary>
+            <typeparam name="TOptions"></typeparam>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Options.OptionsProvider`1.#ctor(Microsoft.Extensions.Options.IOptions{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentSpotifyApi.Core.Options.OptionsProvider`1"/> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:FluentSpotifyApi.Core.Options.OptionsProvider`1.Get">
+            <summary>
+            Gets the current options.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when current options value is null.</exception>
+        </member>
+    </members>
+</doc>
