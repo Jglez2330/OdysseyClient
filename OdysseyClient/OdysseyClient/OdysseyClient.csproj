@@ -137,6 +137,10 @@
     <Compile Include="gtk-gui\OdysseyClient.AlertWindow.cs" />
     <Compile Include="RegisterWindow.cs" />
     <Compile Include="gtk-gui\OdysseyClient.RegisterWindow.cs" />
+    <Compile Include="EditSong.cs" />
+    <Compile Include="gtk-gui\OdysseyClient.EditSong.cs" />
+    <Compile Include="Lyrics.cs" />
+    <Compile Include="gtk-gui\OdysseyClient.Lyrics.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="XML\" />
