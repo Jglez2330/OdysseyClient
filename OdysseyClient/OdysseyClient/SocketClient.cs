@@ -131,7 +131,7 @@ namespace OdysseyClient
 			//Console.Write("\n" +sb2 + "\n" );
 
 			//xml = XDocument.Parse(sb);
-			Console.Write(sb);
+			//Console.Write(sb);
 
 			xml = XDocument.Parse(sb);
             

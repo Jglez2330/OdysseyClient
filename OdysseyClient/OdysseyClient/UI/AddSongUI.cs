@@ -47,9 +47,18 @@ namespace OdysseyClient
 				{
 					yearInt = -1;	
 				}
+                nameSong.Text = nameSong.Text.Replace(" ", "");
+                album.Text = album.Text.Replace(" ", "");
+                style.Text = style.Text.Replace(" ", "");
+                artist.Text = artist.Text.Replace(" ", "");
                 
-                      
-				SocketClient.GetSocketClient().send(XMLGenerator.Generate(style.Text,nameSong.Text,artist.Text,album.Text, yearInt,lyrics.Text,0, cancionBytes));
+                
+
+
+
+
+
+                SocketClient.GetSocketClient().send(XMLGenerator.Generate(style.Text,nameSong.Text,artist.Text,album.Text, yearInt,lyrics.Text,0, cancionBytes));
                        
 
                 

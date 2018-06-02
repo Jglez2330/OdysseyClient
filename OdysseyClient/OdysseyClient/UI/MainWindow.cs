@@ -19,6 +19,7 @@ public partial class
     public bool playing = false;
     public int page = 0;
 	private static MainWindow mainWindow;
+    private static Mp3FileReader mp3FileReader;
 
 	public static MainWindow GetMainWindow(){
 		if (mainWindow == null){
@@ -41,7 +42,7 @@ public partial class
         
     }
 
-    protected void UpdateSongs(XDocument xml)
+    public void UpdateSongs(XDocument xml)
     {
         try
         {
@@ -96,47 +97,31 @@ public partial class
 	protected void OnAgregarCancion(object sender, EventArgs e)
 	{
         AddSongUI addSongUI = new AddSongUI(mainWindow);
+        XDocument document = XMLGenerator.RequestSongs(page);
+        UpdateSongs(document);
 
     }
 
 	protected void GetSongs(object sender, EventArgs e)
 	{
-		SocketClient.GetSocketClient().send(XMLGenerator.Generate("None", "None"," "," "," "," ",2));
-		XDocument xml = SocketClient.GetSocketClient().Listen();
-        Console.Write(xml.Root.Element("SongData").Element("SongString").Value.ToString());//.Element("SongString")
-        string sb = xml.Root.Element("SongData").Element("SongString").Value;
-
-
-
-        byte[] song = Convert.FromBase64String(sb);
-       
         
-       
-        //Console.Write(System.Text.Encoding.UTF8.GetString(song));
-
-
-
-        //MemoryStream memory = new MemoryStream(song);
-        
-        //File.Create("Cancion.mp3").Close();
-        //File.WriteAllBytes("Cancion.mp3", song);
-        //byte[] shong = File.ReadAllBytes("Cancion.mp3");
-       MemoryStream stream = new MemoryStream(song);
-        //stream.ReadTimeout = 1000000;
-        //stream.WriteTimeout = 1000000;
-        //byte[] songs = ; 
-        
-        Mp3FileReader mp3FileReader = new Mp3FileReader(stream);
-        player.Init(mp3FileReader);
-        player.Play();
-
 
 	}
+    private void Backward(object sender, EventArgs e)
+    {
+        mp3FileReader.Skip(-10);
+    }
 
-	protected void SendSort(object sender, EventArgs e)
+    private void Forward(object sender, EventArgs e)
+    {
+        mp3FileReader.Skip(10);
+    }
+
+    protected void SendSort(object sender, EventArgs e)
 	{
 		SocketClient.GetSocketClient().send(XMLGenerator.RequestSort(combobox1.ActiveText));
-		XDocument xmlRespond = SocketClient.GetSocketClient().Listen();
+        XDocument document = XMLGenerator.RequestSongs(page);
+        UpdateSongs(document);
 		//image1.Pixbuf;
         
 	}
@@ -154,10 +139,64 @@ public partial class
         }
 	}
 
-	protected void Stop(object sender, EventArgs e)
+    private void Edit(object sender, EventArgs e)
+    {
+        try
+        {
+            Button button = (Button)sender;
+            string name = "";
+            string artist = "";
+            char separator = " ".ToCharArray()[0];
+            string buttonLabel = "";
+
+            if (button.Name == "1")
+            {
+                buttonLabel = button21.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+
+            }
+            else if (button.Name == "2")
+            {
+                buttonLabel = button22.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            else if (button.Name == "3")
+            {
+                buttonLabel = button23.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            else if (button.Name == "4")
+            {
+                buttonLabel = button24.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            XDocument document = new XDocument(new XElement("Data",
+                new XElement("opCode", 25),
+                new XElement("SongName", name),
+                new XElement("Artist", artist)));
+            SocketClient.GetSocketClient().send(document);
+            
+            EditSong editSong = new EditSong(name,artist, page);
+            document = XMLGenerator.RequestSongs(page);
+            UpdateSongs(document);
+        }
+        catch (Exception)
+        {
+            AlertWindow alertWindow = new AlertWindow("Error: No se pudo eliminar el elemento o este no existe, por favor reintentar");
+        }
+    }
+
+    protected void Stop(object sender, EventArgs e)
 	{
         try
         {
+            Console.Write(mp3FileReader.Length);
+            Console.Write(mp3FileReader.Position);
+
             player.Pause();
         }catch(Exception)
         {
@@ -189,7 +228,9 @@ public partial class
                 
                 byte[] song = Convert.FromBase64String(xml.Root.Element("Reply").Value);
                 MemoryStream memoryStream = new MemoryStream(song);
-                Mp3FileReader mp3FileReader = new Mp3FileReader(memoryStream);
+                mp3FileReader = new Mp3FileReader(memoryStream);
+                //player.PlaybackStopped =
+                
                 //mp3FileReader.
                 try
                 {
@@ -202,7 +243,9 @@ public partial class
                 }
                 player.Init(mp3FileReader);
                 player.Play();
+                //NAudio.Gui.WaveViewer waveViewer = new NAudio.Gui.WaveViewer();
             }
+           
 
 
         }catch(Exception)
@@ -213,7 +256,26 @@ public partial class
 
 	}
 
-	protected void PreviousPage(object sender, EventArgs e)
+    private void ResquestMoreSong(object sender, EventArgs e)
+    {
+        
+            XDocument document = new XDocument(new XElement("Data",
+                new XElement("opCode", 3)));
+            SocketClient.GetSocketClient().send(document);
+            document = SocketClient.GetSocketClient().Listen();
+
+            byte[] song = Convert.FromBase64String(document.Root.Element("Reply").Value);
+            MemoryStream memoryStream = new MemoryStream(song);
+            //mp3FileReader.
+            mp3FileReader = new Mp3FileReader(memoryStream);
+        player.Init(mp3FileReader);
+
+
+
+        
+    }
+
+    protected void PreviousPage(object sender, EventArgs e)
 	{
         --page;
         if (page < 0)
@@ -285,6 +347,58 @@ public partial class
             document = XMLGenerator.RequestSongs(page);
             UpdateSongs(document);
         }catch(Exception)
+        {
+            AlertWindow alertWindow = new AlertWindow("Error: No se pudo eliminar el elemento o este no existe, por favor reintentar");
+        }
+    }
+    private void ShowLyrics(object sender, EventArgs e)
+    {
+        try
+        {
+            Button button = (Button)sender;
+            string name = "";
+            string artist = "";
+            char separator = " ".ToCharArray()[0];
+            string buttonLabel = "";
+
+            if (button.Name == "1")
+            {
+                buttonLabel = button21.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+
+            }
+            else if (button.Name == "2")
+            {
+                buttonLabel = button22.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            else if (button.Name == "3")
+            {
+                buttonLabel = button23.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            else if (button.Name == "4")
+            {
+                buttonLabel = button24.Label;
+                name = buttonLabel.Split(separator)[0];
+                artist = buttonLabel.Split(separator)[2];
+            }
+            XDocument document = new XDocument(new XElement("Data",
+                new XElement("opCode", 40),
+                new XElement("SongName", name),
+                new XElement("Artist", artist)));
+            SocketClient.GetSocketClient().send(document);
+
+            document = SocketClient.GetSocketClient().Listen();
+            string lyrics = document.Root.Element("Reply").Value;
+            Lyrics lyricsWindow = new Lyrics(lyrics);
+            lyricsWindow.Show();
+
+        }
+        catch (Exception)
         {
             AlertWindow alertWindow = new AlertWindow("Error: No se pudo eliminar el elemento o este no existe, por favor reintentar");
         }

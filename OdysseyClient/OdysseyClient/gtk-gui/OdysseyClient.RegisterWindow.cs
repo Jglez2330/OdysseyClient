@@ -16,7 +16,6 @@ namespace OdysseyClient
 
 		private global::Gtk.ComboBoxEntry comboboxentry2;
 
-		private global::Gtk.Label label1;
 
 		private global::Gtk.Button button6;
 
@@ -46,8 +45,8 @@ namespace OdysseyClient
 			this.entry1.InvisibleChar = '●';
 			this.fixed1.Add(this.entry1);
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry1]));
-			w1.X = 59;
-			w1.Y = 47;
+			w1.X = 60;
+			w1.Y = 50;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entry3 = new global::Gtk.Entry();
 			this.entry3.CanFocus = true;
@@ -57,8 +56,8 @@ namespace OdysseyClient
 			this.entry3.InvisibleChar = '●';
 			this.fixed1.Add(this.entry3);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry3]));
-			w2.X = 79;
-			w2.Y = 191;
+			w2.X = 60;
+			w2.Y = 200;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.comboboxentry1 = global::Gtk.ComboBoxEntry.NewText();
 			this.comboboxentry1.AppendText(global::Mono.Unix.Catalog.GetString("Rock"));
@@ -70,8 +69,8 @@ namespace OdysseyClient
 			this.comboboxentry1.Active = 0;
 			this.fixed1.Add(this.comboboxentry1);
 			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.comboboxentry1]));
-			w3.X = 80;
-			w3.Y = 294;
+			w3.X = 60;
+			w3.Y = 290;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.button5 = new global::Gtk.Button();
 			this.button5.CanFocus = true;
@@ -80,22 +79,17 @@ namespace OdysseyClient
 			this.button5.Label = global::Mono.Unix.Catalog.GetString("Registrarse");
 			this.fixed1.Add(this.button5);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button5]));
-			w4.X = 668;
-			w4.Y = 502;
+			w4.X = 670;
+			w4.Y = 500;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.comboboxentry2 = global::Gtk.ComboBoxEntry.NewText();
 			this.comboboxentry2.Name = "comboboxentry2";
+            this.comboboxentry2.Active= 0; 
 			this.fixed1.Add(this.comboboxentry2);
 			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.comboboxentry2]));
-			w5.X = 409;
-			w5.Y = 59;
-			// Container child fixed1.Gtk.Fixed+FixedChild
-			this.label1 = new global::Gtk.Label();
-			this.label1.Name = "label1";
-			this.fixed1.Add(this.label1);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
-			w6.X = 408;
-			w6.Y = 110;
+			w5.X = 410;
+			w5.Y = 60;
+			
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.button6 = new global::Gtk.Button();
 			this.button6.CanFocus = true;
@@ -104,16 +98,16 @@ namespace OdysseyClient
 			this.button6.Label = global::Mono.Unix.Catalog.GetString("Agregar Amigo");
 			this.fixed1.Add(this.button6);
 			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.button6]));
-			w7.X = 663;
-			w7.Y = 51;
+			w7.X = 660;
+			w7.Y = 50;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label2 = new global::Gtk.Label();
 			this.label2.Name = "label2";
 			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Amigos: ");
 			this.fixed1.Add(this.label2);
 			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
-			w8.X = 439;
-			w8.Y = 117;
+			w8.X = 440;
+			w8.Y = 120;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entry4 = new global::Gtk.Entry();
 			this.entry4.CanFocus = true;
@@ -124,7 +118,7 @@ namespace OdysseyClient
 			this.entry4.InvisibleChar = '●';
 			this.fixed1.Add(this.entry4);
 			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry4]));
-			w9.X = 74;
+			w9.X = 60;
 			w9.Y = 100;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.entry2 = new global::Gtk.Entry();
@@ -135,8 +129,8 @@ namespace OdysseyClient
 			this.entry2.InvisibleChar = '●';
 			this.fixed1.Add(this.entry2);
 			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry2]));
-			w10.X = 88;
-			w10.Y = 158;
+			w10.X = 60;
+			w10.Y = 150;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{
